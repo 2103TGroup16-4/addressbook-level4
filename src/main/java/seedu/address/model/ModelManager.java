@@ -92,6 +92,20 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     @Override
+    public void deleteMedicine(Medicine medicine) {
+        versionedAddressBook.removeMedicine(medicine);
+        indicateAddressBookChanged();
+    }
+
+    @Override
+    public void updateMedicine(Medicine target, Medicine editedMedicine) {
+        requireAllNonNull(target, editedMedicine);
+
+        versionedAddressBook.updateMedicine(target, editedMedicine);
+
+    }
+
+    @Override
     public void updatePerson(Patient target, Patient editedPatient) {
         requireAllNonNull(target, editedPatient);
 

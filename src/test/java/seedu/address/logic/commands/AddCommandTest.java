@@ -100,6 +100,16 @@ public class AddCommandTest {
         }
 
         @Override
+        public void deleteMedicine(Medicine medicine) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void updateMedicine(Medicine target, Medicine editedMedicine) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public void resetData(ReadOnlyAddressBook newData) {
             throw new AssertionError("This method should not be called.");
         }

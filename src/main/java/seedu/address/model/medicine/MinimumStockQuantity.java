@@ -10,7 +10,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class MinimumStockQuantity {
     public static final String MESSAGE_MINIMUM_STOCK_QUANTITY_CONSTRAINTS =
             "Minimum Stock Quantity should be integers.";
-    public static final String MINIMUM_STOCK_QUANTITY_VALIDATION_REGEX = "^[1-9][0-9]{0,2}$";
+    public static final String MINIMUM_STOCK_QUANTITY_VALIDATION_REGEX = "^[1-9]+[0-9]*$";
 
     public final String value;
 

@@ -125,6 +125,26 @@ public class AddressBook implements ReadOnlyAddressBook {
         medicines.add(m);
     }
 
+    /**
+     * Removes {@code medicine} from this {@code AddressBook}.
+     * {@code key} must exist in the records.
+     */
+    public void removeMedicine(Medicine medicine) {
+        medicines.remove(medicine);
+    }
+
+    /**
+     * Replaces the given medicine {@code target} with {@code editedMedicine}.
+     * {@code target} must exist in the address book.
+     * The medicine identity of {@code editedMedicine} must not be the same as another
+     * existing medicine in the address book.
+     */
+    public void updateMedicine(Medicine target, Medicine editedMedicine) {
+        requireNonNull(editedMedicine);
+
+        medicines.setPerson(target, editedMedicine);
+    }
+
     //// util methods
 
     @Override

@@ -100,4 +100,18 @@ public interface Model {
      * {@code medicine} must not already exist in the records.
      */
     void addMedicine(Medicine medicine);
+
+    /**
+     * Deletes the given medicine.
+     * The medicine must exist in the records.
+     */
+    void deleteMedicine(Medicine medicine);
+
+    /**
+     * Replaces the given medicine {@code target} with {@code editedMedicine}.
+     * {@code target} must exist in the address book.
+     * The medicine identity of {@code editedMedicine} must not be the same as another
+     * existing medicine in the address book.
+     */
+    void updateMedicine(Medicine target, Medicine editedMedicine);
 }

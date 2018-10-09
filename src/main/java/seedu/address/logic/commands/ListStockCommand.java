@@ -21,7 +21,6 @@ public class ListStockCommand extends Command {
     public CommandResult execute(Model model, CommandHistory history) {
         requireNonNull(model);
         model.updateFilteredMedicineList(PREDICATE_SHOW_ALL_MEDICINES);
-
         // Temporary to print out to console. Should replace this with GUI in the future!!!
         ObservableList<Medicine> medicineObservableList = model.getFilteredMedicineList();
         StringBuilder medicineListStringBuilder = new StringBuilder();
