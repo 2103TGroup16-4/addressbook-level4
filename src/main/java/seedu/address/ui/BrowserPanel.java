@@ -51,7 +51,7 @@ public class BrowserPanel extends UiPart<Region> {
      */
     private void loadPersonPage(Patient patient) {
         // loadPage(SEARCH_PAGE_URL + patient.getName().fullName);
-        String filePath = "/docs/PatientView.html";
+        String filePath = "/view/PatientView.html";
         String url = MainApp.class.getResource(filePath).toExternalForm();
         url = addPatientDetailsAsArgs(patient, url);
         loadPage(url);

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient View</title>
+    <script type="text/javascript">
+        function getJsonFromUrl() {
+            var query = location.search.substr(1);
+            var result = {};
+            query.split("&").forEach(function(part) {
+                var item = part.split("=");
+                result[item[0]] = decodeURIComponent(item[1]);
+            });
+            return result;
+        }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("name").innerHTML=getJsonFromUrl().name;
+            document.getElementById("ic").innerHTML=getJsonFromUrl().ic;
+            document.getElementById("address").innerHTML=getJsonFromUrl().address;
+            document.getElementById("phone").innerHTML=getJsonFromUrl().phone;
+            document.getElementById("email").innerHTML=getJsonFromUrl().email;
+            document.getElementById("blood").innerHTML=getJsonFromUrl().blood;
+            document.getElementById("diseases").innerHTML=getJsonFromUrl().diseases;
+            document.getElementById("drugs").innerHTML=getJsonFromUrl().drugs;
+            document.getElementById("notes").innerHTML=getJsonFromUrl().notes;
+        });
+    </script>
+</head>
+<body>
+    <h1><u>Patient Profile</u></h1>
+
+    <h3><span id="name"></span></h3>
+    <h3><span id="ic"></span></h3>
+    <h3><span id="address"></span></h3>
+
+    <h2><strong>Contact Details</strong></h2>
+    <p>HP Number: <span id="phone"></span></p>
+    <p>Email: <span id="email"></span></p>
+
+    <h2><strong>Medical Records</strong></h2>
+    <p>Blood Type: <span id="blood"></span></p>
+    <p>Disease History: <span id="diseases"></span></p>
+    <p>Drug Allergies: <span id="drugs"></span></p>
+    <p>Notes: <span id="notes"></span></p>
+</body>
+</html>
