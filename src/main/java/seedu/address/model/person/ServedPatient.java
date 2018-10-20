@@ -53,7 +53,7 @@ public class ServedPatient {
     /**
      * Returns the note content for the {@code served patient}.
      */
-    String getNoteContent() {
+    public String getNoteContent() {
         return this.noteContent;
     }
 
@@ -81,21 +81,21 @@ public class ServedPatient {
     /**
      * Skeleton to add note content.
      */
-    String addNoteContent(String content) {
+    public String addNoteContent(String content) {
         return noteContent = content;
     }
 
     /**
      * Skeleton to add referral content.
      */
-    String addReferralContent(String content) {
+    public String addReferralContent(String content) {
         return referralContent = content;
     }
 
     /**
      * Skeleton to add Mc Content.
      */
-    String addMcContent(String content) {
+    public String addMcContent(String content) {
         return mcContent = content;
     }
 
