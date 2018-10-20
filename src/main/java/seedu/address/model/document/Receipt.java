@@ -33,6 +33,9 @@ public class Receipt extends Document {
         allocatedMedicine = servedPatient.getMedicineAllocated();
     }
 
+    /**
+     * Formats all the relevant information of a receipt in HTML for the served patient.
+     */
     String formatReceiptInformation() {
         StringBuilder stringbuilder = new StringBuilder();
         stringbuilder.append(RECEIPT_HEADER)
@@ -45,12 +48,19 @@ public class Receipt extends Document {
         return stringbuilder.toString();
     }
 
-    //placeholder
-    //private String unpackConsultationInformation(Map<String, Integer> treatmentsReceived) {
+    /**
+     * Extracts all the types of services rendered by the clinic for the served patient.
+     */
     private String unpackTypesOfServices() {
+        //placeholder
+        //private String unpackConsultationInformation(Map<String, Integer> treatmentsReceived) {
         return "<tr><td>Consultation" + HTML_TABLE_FORMATTING + "1" + HTML_TABLE_FORMATTING + "30.00"
                 + HTML_TABLE_FORMATTING + "30.00</td></tr>";
     }
+
+    /**
+     * Extracts all the medicines dispensed by the clinic for the served patient.
+     */
     private String unpackMedicineAllocation(Map<Medicine, Integer> medicineAllocated) {
         StringBuilder stringBuilder = new StringBuilder();
         int quantity;
