@@ -159,7 +159,7 @@ public class Document {
         this.icNumber = icNumber;
     }
 
-    void setFileType(String fileType) {
+    public void setFileType(String fileType) {
         this.fileType = fileType;
     }
 

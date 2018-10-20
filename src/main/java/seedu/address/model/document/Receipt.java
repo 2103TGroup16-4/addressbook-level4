@@ -1,6 +1,5 @@
 package seedu.address.model.document;
 
-import java.text.DecimalFormat;
 import java.util.Map;
 
 import seedu.address.model.medicine.Medicine;
@@ -22,8 +21,6 @@ public class Receipt extends Document {
 
     private float totalPrice = 0;
     private Map<Medicine, Integer> allocatedMedicine;
-    DecimalFormat df = new DecimalFormat();
-
 
     /**
      * Creates a receipt object for the specified servedPatient.
