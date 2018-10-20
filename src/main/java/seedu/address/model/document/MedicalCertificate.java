@@ -1,4 +1,4 @@
-package seedu.address.model.Document;
+package seedu.address.model.document;
 
 import seedu.address.model.person.ServedPatient;
 

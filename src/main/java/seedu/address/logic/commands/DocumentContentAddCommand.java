@@ -29,8 +29,8 @@ public class DocumentContentAddCommand extends QueueCommand {
             + "[" + PREFIX_REFERRAL_CONTENT + "Referral] "
             + "[" + PREFIX_MC_CONTENT + " MC]";
 
-    public static final String MESSAGE_DOCUMENT_ADD_SUCCESS = "Patient Document Updated: ";
-    public static final String MESSAGE_NO_CURRENT_PATIENT = "There is no Current Patient. Use the serve command first.";
+    private static final String MESSAGE_DOCUMENT_ADD_SUCCESS = "Patient document Updated: ";
+    private static final String MESSAGE_NO_CURRENT_PATIENT = "There is no Current Patient. Use the serve command first.";
 
 
     private final DocumentContentDescriptor documentContentDescriptor;
@@ -95,7 +95,7 @@ public class DocumentContentAddCommand extends QueueCommand {
          * Copy constructor.
          * A defensive copy of {@code tags} is used internally.
          */
-        public DocumentContentDescriptor(DocumentContentDescriptor toCopy) {
+        DocumentContentDescriptor(DocumentContentDescriptor toCopy) {
             setMcContent(toCopy.mcContent);
             setReferralContent(toCopy.referralContent);
             setNoteContent(toCopy.noteContent);
@@ -112,7 +112,7 @@ public class DocumentContentAddCommand extends QueueCommand {
             this.mcContent = mcContent;
         }
 
-        public Optional<String> getMcContent() {
+        Optional<String> getMcContent() {
             return Optional.ofNullable(mcContent);
         }
 
@@ -120,7 +120,7 @@ public class DocumentContentAddCommand extends QueueCommand {
             this.referralContent = referralContent;
         }
 
-        public Optional<String> getReferralContent() {
+        Optional<String> getReferralContent() {
             return Optional.ofNullable(referralContent);
         }
 
@@ -128,7 +128,7 @@ public class DocumentContentAddCommand extends QueueCommand {
             this.noteContent = noteContent;
         }
 
-        public Optional<String> getNoteContent() {
+        Optional<String> getNoteContent() {
             return Optional.ofNullable(noteContent);
         }
 

@@ -10,7 +10,7 @@ import seedu.address.model.medicine.Medicine;
 /**
  * Uncompleted class, need to add more methods and fields.
  * Represents a patient that has already consulted the doctor in the address book.
- * It has all the necessary data needed to generate any object that inherits from Document.
+ * It has all the necessary data needed to generate any object that inherits from document.
  */
 public class ServedPatient {
 
@@ -36,10 +36,16 @@ public class ServedPatient {
         this.mcContent = "";
     }
 
+    /**
+     * Returns the name for the {@code served patient}.
+     */
     public Name getName() {
         return patient.getName();
     }
 
+    /**
+     * Returns the IC Number for the {@code served patient}.
+     */
     public IcNumber getIcNumber() {
         return patient.getIcNumber();
     }
@@ -47,9 +53,10 @@ public class ServedPatient {
     /**
      * Returns the note content for the {@code served patient}.
      */
-    public String getNoteContent() {
+    String getNoteContent() {
         return this.noteContent;
     }
+
     /**
      * Returns the MC content for the {@code served patient}.
      */
@@ -74,21 +81,21 @@ public class ServedPatient {
     /**
      * Skeleton to add note content.
      */
-    public String addNoteContent(String content) {
+    String addNoteContent(String content) {
         return noteContent = content;
     }
 
     /**
      * Skeleton to add referral content.
      */
-    public String addReferralContent(String content) {
+    String addReferralContent(String content) {
         return referralContent = content;
     }
 
     /**
      * Skeleton to add Mc Content.
      */
-    public String addMcContent(String content) {
+    String addMcContent(String content) {
         return mcContent = content;
     }
 

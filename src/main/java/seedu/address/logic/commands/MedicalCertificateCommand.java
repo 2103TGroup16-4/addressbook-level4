@@ -6,7 +6,7 @@ import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.commands.exceptions.CommandException;
-import seedu.address.model.Document.MedicalCertificate;
+import seedu.address.model.document.MedicalCertificate;
 import seedu.address.model.Model;
 import seedu.address.model.PatientQueue;
 import seedu.address.model.ServedPatientList;
