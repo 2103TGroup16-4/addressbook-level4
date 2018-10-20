@@ -70,14 +70,14 @@ public class CurrentPatient {
     /**
      * Returns the note content for the {@code served patient}.
      */
-    private String getNoteContent() {
+    public String getNoteContent() {
         requireNonNull(patient);
         return patient.getNoteContent();
     }
     /**
      * Returns the MC content for the {@code served patient}.
      */
-    private String getMcContent() {
+    public String getMcContent() {
         requireNonNull(patient);
         return patient.getMcContent();
     }
@@ -85,7 +85,7 @@ public class CurrentPatient {
     /**
      * Returns the referral content for the {@code served patient}.
      */
-    private String getReferralContent() {
+    public String getReferralContent() {
         requireNonNull(patient);
         return patient.getReferralContent();
     }
@@ -93,7 +93,7 @@ public class CurrentPatient {
     /**
      * Returns the allocated medicine for the patient.
      */
-    private Map<Medicine, Integer> getMedicineAllocated() {
+    public Map<Medicine, Integer> getMedicineAllocated() {
         return patient.getMedicineAllocated();
     }
 
