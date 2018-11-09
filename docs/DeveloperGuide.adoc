@@ -302,7 +302,7 @@ If the `currentStatePointer` is at index 0, pointing to the initial address book
 
 The following sequence diagram shows how the undo operation works:
 
-.Undo/Redo sequence diagram
+.Sequence diagram for UndoCommand and RedoCommand.
 image::UndoRedoSequenceDiagram.png[width="800"]
 
 The `redo` command does the opposite -- it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
@@ -369,7 +369,7 @@ Step 2. The user wishes to add a `MedicalRecord` containing only the `BloodType`
 
 When this command is executed, the program creates a new `MedicalRecord` object with just the `BloodType` specified, takes the old `MedicalRecord` object of the `Patient` (which is empty), and does a merging of the two objects, returning a new `MedicalRecord` object. The `Patient` is then updated with this new combined `MedicalRecord`. The following figure shows the sequence diagram for this command.
 
-.Sequence diagram for AddMedicalRecordCommand
+.Sequence diagram for AddMedicalRecordCommand.
 image::addMedicalRecord-SequenceDiagram.png[width="650"]
 
 The following figure shows the code section which performs this merging.
@@ -613,7 +613,7 @@ public class ServedPatient {
 
 The following sequence diagram shows how the `register` command works:
 
-.Register Sequence Diagram
+.Sequence diagram for RegisterCommand.
 image::RegisterSequenceDiagram.png[width="1000"]
 
 The other commands roughly follow the same sequence as `Register` command but can interact with `CurrentPatient` or `ServedPatientList` instead of `PatientQueue`.
@@ -684,7 +684,7 @@ As the formatter which directs how the documents are built from the `DocumentTem
 The following activity diagram summarises what happens internally when a _document related command_ is executed.
 
 .Flow of activities when a _document related command_ is executed. Only the methods that are *implemented* within `Document` itself are labelled in the diagram.
-image::DocumentActivityDiagram.png[width="600"]
+image::DocumentActivityDiagram.png[width="900"]
 
 As seen in the above activity diagram, upon executing a _document related command_, the corresponding document will
 be constructed from the `ServedPatient` object specified by the `index` that was passed in with the command,
@@ -788,6 +788,9 @@ The `Receipt` class structure is as follows:
 
 Users can generate a `Receipt` for a specific `ServedPatient` by invoking the `ReceiptCommand` accompanied by the
  served patient's index in the `ServedPatientList`. The below sequence diagram illustrates how the `ReceiptCommand` works.
+
+.Sequence diagram for ReceiptCommand.
+image::ReceiptSequenceDiagram.png[width="900"]
 
 When the `ReceiptCommand` is executed, it will construct a new `Receipt` object and extract the relevant information
 from the `ServedPatient` specified by the `index`.
@@ -1327,7 +1330,7 @@ Do take a look at <<Design-Storage>> before attempting to modify the `Storage` c
 
 By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major components of the app.
 
-*Scenario:* You are a software maintainer for `addressbook`, as the former developer team has moved on to new projects. The current users of your application have a list of new feature requests that they hope the software will eventually have. The most popular request is to allow adding additional comments/notes about a particular contact, by providing a flexible `remark` field for each contact, rather than relying on tags alone. After designing the specification for the `remark` command, you are convinced that this feature is worth implementing. Your job is to implement the `remark` command.
+*Scenario:* You are a software maintainer for `CLInic`, as the former developer team has moved on to new projects. The current users of your application have a list of new feature requests that they hope the software will eventually have. The most popular request is to allow adding additional comments/notes about a particular contact, by providing a flexible `remark` field for each contact, rather than relying on tags alone. After designing the specification for the `remark` command, you are convinced that this feature is worth implementing. Your job is to implement the `remark` command.
 
 ==== Description
 Edits the remark for a patient specified in the `INDEX`. +
