@@ -554,19 +554,19 @@ flexibility of structuring the contents unique to its document type by means of 
 <div class="ulist">
 <ul>
 <li>
-<p>contains a <code>Map&lt;Medicine, MedicineQuantity&gt;</code> attribute to record the quantity dispensed of each type of <code>Medicine</code> to the <code>ServedPatient</code> from which the <code>Receipt</code> was constructed from.</p>
+<p>Contains a <code>Map&lt;Medicine, MedicineQuantity&gt;</code> attribute to record the quantity dispensed of each type of <code>Medicine</code> to the <code>ServedPatient</code> from which the <code>Receipt</code> was constructed from.</p>
 </li>
 <li>
-<p>contains a <code>HashSet&lt;Service&gt;</code> attribute to record the <code>Services</code> administered to the patient.</p>
+<p>Contains a <code>HashSet&lt;Service&gt;</code> attribute to record the <code>Services</code> administered to the patient.</p>
 </li>
 <li>
-<p>has an attribute <code>totalPrice</code> which stores the total price of all the <code>Services</code> and <code>Medicines</code> received by the patient.</p>
+<p>Has an attribute <code>totalPrice</code> which stores the total price of all the <code>Services</code> and <code>Medicines</code> received by the patient.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Users can generate a <code>Receipt</code> for a specific <code>ServedPatient</code> by invoking the <code>ReceiptCommand</code> accompanied by the
- served patient&#8217;s index in the <code>ServedPatientList</code>. The below sequence diagram illustrates how the <code>ReceiptCommand</code> works.</p>
+ <code>ServedPatient</code> 's index in the <code>ServedPatientList</code>. The below sequence diagram illustrates how the <code>ReceiptCommand</code> works.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -608,4 +608,4 @@ Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 12:00:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 12:40:16 UTC</div></div></div></body></html>
