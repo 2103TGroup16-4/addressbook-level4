@@ -492,5 +492,41 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-implementation-of-code-adddocument-code-code-medicalcertificate-code-and-code-referralletter-code-commands"><a class="link" href="#aspect-implementation-of-code-adddocument-code-code-medicalcertificate-code-and-code-referralletter-code-commands">Aspect: Implementation of <code>adddocument</code>, <code>MedicalCertificate</code> and <code>ReferralLetter</code> Commands</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Issuing doctor&#8217;s name is hard-coded into the <code>MedicalCertificate</code> and <code>ReferralLetter</code> HTML template.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: No need for an extra parameter to key in issuing doctor&#8217;s name, which is helpful when there is only one doctor working in a clinic.</p>
+</li>
+<li>
+<p>Cons: There may be more than one doctor working in a clinic.</p>
+</li>
+</ul>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 06:46:30 UTC</div></div></div></body></html>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Include a mandatory parameter <code>id/ISSUING_DOCTOR</code> to the 'adddocument' command for the issuing doctor to key in his/her name.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Different doctors can sign off the medical certificates and referral letters.</p>
+</li>
+<li>
+<p>Cons: Slightly more typing is necessary when executing the <code>adddocument</code> command.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:22:08 UTC</div></div></div></body></html>
