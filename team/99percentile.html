@@ -16,16 +16,16 @@ as part of my university education.</p>
 </div>
 <div class="paragraph">
 <p>This project portfolio serves to document my contributions to this project. You can see my contributions to
-the <a href="#summary-of-contributions">project</a>, the <a href="#contributions-to-the-user-guide">user guide</a> and the <a href="#contributions-to-the-developer-guide">developer guide</a> below.</p>
+the <a href="#summary-of-contributions">project</a>, <a href="#contributions-to-the-user-guide">user guide</a> and <a href="#contributions-to-the-developer-guide">developer guide</a> below.</p>
 </div>
 <div class="paragraph">
 <p>CLInic is a desktop application made for clinics who wish to automate their daily operations.
 CLI in CLInic is an acronym for Command Line Interface, which is the primary method to use the application.
 Unlike traditional address books, the doctor or clinic receptionist can easily <code>add</code>, <code>edit</code> or <code>find</code> the information of
-patient or medicine by entering one simple line in the command box.</p>
+patient or medicine by entering just one simple line in the command box.</p>
 </div>
 <div class="paragraph">
-<p>This is what CLInic offers:</p>
+<p>This is what CLInic has to offer:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -39,6 +39,9 @@ patient or medicine by entering one simple line in the command box.</p>
 <p>Customised receipts, medical certificates and referral letters for clinics.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Want to make your clinic more organised? <a href="https://github.com/CS2103-AY1819S1-W16-4/main/releases">Download</a> CLInic and try it now for <strong>FREE</strong>!</p>
 </div>
 </div>
 </div>
@@ -56,11 +59,11 @@ as well as my contributions to the project.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: The clinic can automate the tracking of medical stocks.</p>
+<p>What it does: It allows the clinic to automate the tracking of the amount of medicines.</p>
 </li>
 <li>
-<p>Justification: The medical stocks are tracked and there are useful commands that can organise or find the information of a medicine.
-With this, you do not have to manually keep track of the change in stocks every time a medicine is dispensed.</p>
+<p>Justification: The amount of medicines are tracked and there are useful commands that can organise or find the information of a medicine.
+With this, you do not have to manually note down the change in level of medicine every time a medicine is dispensed or restocked.</p>
 </li>
 <li>
 <p>Highlights: With the <code>checkstock</code> command, you can easily list out all medical stocks that are low in stock in just 2 seconds!</p>
@@ -105,7 +108,7 @@ With this, you do not have to manually keep track of the change in stocks every 
 <p>Reviewed pull requests : <a href="https://github.com">#27</a>, <a href="https://github.com">#31</a>, <a href="https://github.com">#107</a></p>
 </li>
 <li>
-<p>Configured <a href="#link">config.json</a> to allow Reposense to detect each member&#8217;s works.</p>
+<p>Configured <a href="#config.json">config.json</a> to allow Reposense to detect each member&#8217;s works.</p>
 </li>
 </ul>
 </div>
@@ -303,20 +306,25 @@ Medicines that are low in supply are those whose stock level is equal to or lowe
 </table>
 <div class="sect2">
 <h3 id="medicine-records-system"><a class="link" href="#medicine-records-system">Medicine Records System</a></h3>
+<div class="paragraph">
+<p>The medicine records system is used to manage the medicine inventory in the clinic.
+It allows the clinic to automate the monitoring and management of their medicine supply easily.
+The potential to evolve this system is endless, from including artificial intelligence
+to manage the clinic supply without human intervention to delivering the first-hand information
+from medical breakthroughs to treat patients more effectively!</p>
+</div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The medicine records system is used to manage the medicine inventory in the clinic.
-The <em>Medicine</em> class and the properties of the medicine are stored under the Model package.
+<p>The <em>Medicine</em> class and the properties of the medicine are stored in the Model package.
 They are modeled after the properties of a real medicine in a clinic context.
-The list of medicines currently tracked in the clinic is located in the AddressBook class.
-You can refer to <a href="#ModelComponent">modelcomponent</a> to see where are the classes located.</p>
+The list of medicines currently tracked in the clinic is located in the AddressBook class.</p>
 </div>
 <div class="paragraph">
-<p>Click <a href="#link">here</a> for the list of commands related to the medicine class.</p>
+<p>See the User Guide for the list of commands related to the medicine class.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example of how the medicine class is used:</p>
+<p>Given below are examples of how the medicine commands are used:</p>
 </div>
 <div class="paragraph">
 <p>Scenario 1. The clinic orders a new medicine that they do not currently have in their store.
@@ -324,7 +332,7 @@ You can refer to <a href="#ModelComponent">modelcomponent</a> to see where are t
 </div>
 <div class="paragraph">
 <p>Scenario 2. There is a wrong entry of one of the serial number of the medicine. The user types
-<code>editmedicine</code> to correct the serial number. Figure xxx shows the execution of the code.</p>
+<code>editmedicine</code> to correct the serial number. The code on how it works is shown below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -339,7 +347,8 @@ You can refer to <a href="#ModelComponent">modelcomponent</a> to see where are t
         Medicine medicineToEdit = lastShownList.get(index.getZeroBased());
         Medicine editedMedicine = createEditedMedicine(medicineToEdit, medicineDescriptor);
 
-        <span class="keyword">if</span> (!medicineToEdit.isSameMedicine(editedMedicine) &amp;&amp; model.hasMedicine(editedMedicine)) {
+        <span class="keyword">if</span> (!medicineToEdit.isSameMedicine(editedMedicine)
+                &amp;&amp; model.hasMedicine(editedMedicine)) {
             <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_DUPLICATE_MEDICINE);
         }
 
@@ -355,42 +364,7 @@ You can refer to <a href="#ModelComponent">modelcomponent</a> to see where are t
 
         <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_EDIT_MEDICINE_SUCCESS, editedMedicine));
     }
-
-    <span class="comment">/**
-     * Asserts that medicine name has changed when user tries to change the medicine name, and the medicine name
-     * already exists in the records.
-     */</span>
-    <span class="directive">private</span> <span class="type">void</span> checkNewMedicineNameAlreadyExisting(Model model, Medicine editedMedicine) <span class="directive">throws</span> CommandException {
-        <span class="keyword">if</span> (model.hasMedicineName(editedMedicine)
-                &amp;&amp; medicineDescriptor.isMedicineNameChanged()) {
-            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_DUPLICATE_MEDICINE_NAME);
-        }
-    }
-
-    <span class="comment">/**
-     * Asserts that serial number has changed when user tries to change the serial number, and the serial number
-     * already exists in the records.
-     */</span>
-    <span class="directive">private</span> <span class="type">void</span> checkNewSerialNumberAlreadyExisting(Model model, Medicine editedMedicine) <span class="directive">throws</span> CommandException {
-        <span class="keyword">if</span> (model.hasSerialNumber(editedMedicine)
-                &amp;&amp; medicineDescriptor.isSerialNumberChanged()) {
-            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_USED_SERIAL_NUMBER);
-        }
-    }
-
-    <span class="comment">/**
-     * Asserts that both the medicine name and serial number have changed when user tries to change the both of them,
-     * and both parameters already exists in the records.
-     */</span>
-    <span class="directive">private</span> <span class="type">void</span> checkBothNewMedicineNameAndSerialNumberAlreadyExisting(Model model, Medicine editedMedicine)
-            <span class="directive">throws</span> CommandException {
-        <span class="keyword">if</span> (model.hasMedicineName(editedMedicine)
-                &amp;&amp; model.hasSerialNumber(editedMedicine)
-                &amp;&amp; medicineDescriptor.isMedicineNameChanged()
-                &amp;&amp; medicineDescriptor.isSerialNumberChanged()) {
-            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_USED_SERIAL_NUMBER + <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> + MESSAGE_DUPLICATE_MEDICINE_NAME);
-        }
-    }</code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -452,4 +426,4 @@ Below were the possible ones we chose and the analysis of each one.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:39:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 08:16:05 UTC</div></div></div></body></html>
