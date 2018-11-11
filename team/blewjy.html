@@ -95,7 +95,7 @@ It required the creation of an <code>XmlAdapted-</code> version of each model ob
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Code contributed</strong>: Click <a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=lew&amp;sort=displayName&amp;since=2018-09-12&amp;until=2018-11-11&amp;timeframe=day&amp;reverse=true&amp;repoSort=true">here</a> to view my contributed code.</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -152,85 +152,6 @@ It required the creation of an <code>XmlAdapted-</code> version of each model ob
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="listing-all-patients-code-list-code"><a class="link" href="#listing-all-patients-code-list-code">Listing all patients: <code>list</code></a></h4>
-<div class="paragraph">
-<p>Need to list all patients in the database?<br>
-Do this easily with the <code>list</code> command.<br>
-Alias: <code>l</code><br>
-Format: <code>list</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/list-command-example.png" alt="list command example" width="650">
-</div>
-<div class="title">Figure 1. Before and after executing the <code>list</code> command</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">Deleting a patient: <code>delete</code></a></h4>
-<div class="paragraph">
-<p>What if we need to remove a patient&#8217;s details from the database?<br>
-You can do so with the <code>delete</code> command, which will clear the user&#8217;s details from the database completely.<br>
-Alias: <code>d</code><br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Thing(s) to note:</div>
-<div class="ulist">
-<ul>
-<li>
-<p>You cannot delete a patient that is currently in queue.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-Deletes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd patient in the database.</p>
-</li>
-<li>
-<p><code>find Bryan</code><br>
-<code>d 1</code><br>
-Deletes the 1st patient in the resulting list of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/delete-command-example.png" alt="delete command example" width=""650">
-</div>
-<div class="title">Figure 2. Before and after executing the <code>find Bryan</code> and <code>d 1</code> command</div>
-</div>
-</div>
-<div class="sect3">
 <h4 id="selecting-a-patient-code-select-code"><a class="link" href="#selecting-a-patient-code-select-code">Selecting a patient: <code>select</code></a></h4>
 <div class="paragraph">
 <p>Selects a patient to view his profile.<br>
@@ -271,7 +192,7 @@ Selects the 1st patient in the resulting list of the <code>find</code> command.<
 <div class="content">
 <img src="../images/select-command-example.png" alt="select command example" width="650">
 </div>
-<div class="title">Figure 3. Before and after executing the <code>find Bryan</code> and <code>s 1</code> command.</div>
+<div class="title">Figure 1. Before and after executing the <code>find Bryan</code> and <code>s 1</code> command.</div>
 </div>
 </div>
 <div class="sect3">
@@ -324,7 +245,7 @@ Adds <code>Paracetamol</code> (under <em>Drug Allergy</em>) and <code>Diabetes</
 <div class="content">
 <img src="../images/addmedicalrecord-example-1.png" alt="addmedicalrecord example 1" width="650">
 </div>
-<div class="title">Figure 4. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
+<div class="title">Figure 2. After <code>addmedicalrecord 5 da/Paracetomal d/Diabetes</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -338,7 +259,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="../images/addmedicalrecord-example-2.png" alt="addmedicalrecord example 2" width="650">
 </div>
-<div class="title">Figure 5. After <code>amr 3 b/B+</code> command</div>
+<div class="title">Figure 3. After <code>amr 3 b/B+</code> command</div>
 </div>
 </div>
 </div>
@@ -401,56 +322,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="../images/addMedicalRecord-SequenceDiagram.png" alt="addMedicalRecord SequenceDiagram" width="900">
 </div>
-<div class="title">Figure 6. Sequence diagram for AddMedicalRecordCommand.</div>
-</div>
-<div class="paragraph">
-<p>The following figure shows the code section which performs this merging.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/**
- * Combines 2 medical records into one.
- * @param record1
- * @param record2
- * @return a single MedicalRecord object which is a combination of the two provided.
- */</span>
-<span class="directive">public</span> <span class="directive">static</span> MedicalRecord combineMedicalRecords(MedicalRecord record1, MedicalRecord record2) {
-
-    BloodType newBloodType = record1.getBloodType();
-
-    <span class="keyword">if</span> (!record1.getBloodType().equals(record2.getBloodType())
-            &amp;&amp; !record1.getBloodType().value.equals(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>) &amp;&amp; !record2.getBloodType().value.equals(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>)) {
-        <span class="comment">// This is not allowed! Defaulting to original bloodtype...</span>
-    } <span class="keyword">else</span> {
-        newBloodType = record2.getBloodType();
-    }
-
-    <span class="predefined-type">List</span>&lt;DrugAllergy&gt; newDrugAllergies = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getDrugAllergies());
-    <span class="keyword">for</span> (DrugAllergy drugAllergy: record2.getDrugAllergies()) {
-        <span class="keyword">if</span> (!newDrugAllergies.contains(drugAllergy)) {
-            newDrugAllergies.add(drugAllergy);
-        }
-    }
-
-    <span class="predefined-type">List</span>&lt;Disease&gt; newDiseaseHistory = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getDiseaseHistory());
-    <span class="keyword">for</span> (Disease disease: record2.getDiseaseHistory()) {
-        <span class="keyword">if</span> (!newDiseaseHistory.contains(disease)) {
-            newDiseaseHistory.add(disease);
-        }
-    }
-
-    <span class="predefined-type">List</span>&lt;Note&gt; newNotes = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;&gt;(record1.getNotes());
-    <span class="keyword">for</span> (Note note: record2.getNotes()) {
-        <span class="keyword">if</span> (!newNotes.contains(note)) {
-            newNotes.add(note);
-        }
-    }
-
-    MedicalRecord newRecord = <span class="keyword">new</span> MedicalRecord(newBloodType, newDrugAllergies, newDiseaseHistory, newNotes);
-
-    <span class="keyword">return</span> newRecord;
-}</code></pre>
-</div>
+<div class="title">Figure 4. Sequence diagram for AddMedicalRecordCommand.</div>
 </div>
 </div>
 <div class="sect3">
@@ -504,7 +376,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="../images/PQMS-gui.png" alt="PQMS gui" width="850">
 </div>
-<div class="title">Figure 7. GUI for the PQMS</div>
+<div class="title">Figure 5. GUI for the PQMS</div>
 </div>
 <div class="paragraph">
 <p>After <code>QueueCommands</code> such as <code>register</code>, <code>serve</code>, etc., the GUI will automatically update itself as the user enters these commands to reflect the situation of the PQMS at that exact point in time.</p>
@@ -513,7 +385,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 <div class="content">
 <img src="../images/PQMS-GUI-2.png" alt="PQMS GUI 2" width=""650">
 </div>
-<div class="title">Figure 8. GUI for the PQMS after several commands</div>
+<div class="title">Figure 6. GUI for the PQMS after several commands</div>
 </div>
 <div class="paragraph">
 <p>This UI element is implemented using JavaFX&#8217;s <code>WebView</code> and a local HTML file. The sequence of events for how the <code>WebView</code> is updated is as follows:</p>
@@ -644,4 +516,4 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 08:16:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 08:39:26 UTC</div></div></div></body></html>
