@@ -139,9 +139,9 @@ Interested? Continue scrolling to hop onboard with us and get started!<br></p>
 <p>Double-click the file to start the application. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/UiActual.png" alt="UiActual" width="790">
 </div>
-<div class="title">Figure 1. Prototype of UI</div>
+<div class="title">Figure 1. CLInic&#8217;s UI</div>
 </div>
 </li>
 <li>
@@ -957,7 +957,8 @@ the patient is in queue, the patient will be removed from queue.
 <div class="sect3">
 <h4 id="registering-a-patient-to-waiting-queue-code-register-code"><a class="link" href="#registering-a-patient-to-waiting-queue-code-register-code">3.3.1. Registering a patient to Waiting Queue: <code>register</code></a></h4>
 <div class="paragraph">
-<p>Registers a patient to the back of the Waiting Queue.<br>
+<p>A patients needs to see the doctor? Better get him into the queue using the
+register command!<br>
 Alias: <code>reg</code><br>
 Format: <code>register INDEX</code></p>
 </div>
@@ -1005,7 +1006,7 @@ Registers the 1st patient in the resulting list of the <code>find</code> command
 <div class="sect3">
 <h4 id="listing-all-patients-in-waiting-queue-code-queue-code"><a class="link" href="#listing-all-patients-in-waiting-queue-code-queue-code">3.3.2. Listing all patients in Waiting Queue: <code>queue</code></a></h4>
 <div class="paragraph">
-<p>Lists all patients in the Waiting queue.<br>
+<p>Need to know who is in the queue? Use the queue command!<br>
 Alias: <code>q</code><br>
 Format: <code>queue</code></p>
 </div>
@@ -1013,7 +1014,7 @@ Format: <code>queue</code></p>
 <div class="sect3">
 <h4 id="removing-a-patient-from-waiting-queue-code-remove-code"><a class="link" href="#removing-a-patient-from-waiting-queue-code-remove-code">3.3.3. Removing a patient from Waiting Queue: <code>remove</code></a></h4>
 <div class="paragraph">
-<p>Removes a patient from the Waiting Queue if he leaves before being served.<br>
+<p>Patient can&#8217;t wait for his turn and left the clinic? Time to remove him from the queue!<br>
 Alias: <code>rem</code><br>
 Format: <code>remove INDEX</code></p>
 </div>
@@ -1065,7 +1066,7 @@ Removes the 2nd patient in the queue.</p>
 <div class="sect3">
 <h4 id="inserting-a-patient-to-waiting-queue-code-insert-code"><a class="link" href="#inserting-a-patient-to-waiting-queue-code-insert-code">3.3.4. Inserting a patient to Waiting Queue: <code>insert</code></a></h4>
 <div class="paragraph">
-<p>Inserts a patient into the specified position in the Waiting Queue.<br>
+<p>A patient needs to be inserted into a certain position? Insert him into any position!<br>
 Alias: <code>ins</code><br>
 Format: <code>insert INDEX p/POSITION</code></p>
 </div>
@@ -1128,7 +1129,7 @@ Inserts the 3rd patient into the 5th position in the patient queue.</p>
 <div class="sect3">
 <h4 id="serve"><a class="link" href="#serve">3.3.5. Serving the first patient in Waiting queue: <code>serve</code></a></h4>
 <div class="paragraph">
-<p>Serves the first patient in the Waiting queue. The patient being served is now the Current Patient.<br>
+<p>Doctor is finally ready to the serve the next patient? Use the serve command!
 Alias: <code>ser</code><br>
 Format: <code>serve</code></p>
 </div>
@@ -1161,7 +1162,7 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="sect3">
 <h4 id="adddocument"><a class="link" href="#adddocument">3.3.6. Adding document contents to Current Patient: <code>adddocument</code></a></h4>
 <div class="paragraph">
-<p>Adds document contents to the Current Patient.<br>
+<p>Patient has a bad headache? Patient needs 5 days mc? Better write them down!<br>
 Alias: <code>ad</code><br>
 Format: <code>adddocument [mc/MC_DAYS] [n/NOTES] [r/REFERRAL]</code></p>
 </div>
@@ -1242,7 +1243,7 @@ Format: <code>displaydocuments</code></p>
 <div class="sect3">
 <h4 id="dispensing-medicine-to-current-patient-code-dispensemedicine-code"><a class="link" href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">3.3.8. Dispensing medicine to Current Patient: <code>dispensemedicine</code></a></h4>
 <div class="paragraph">
-<p>Dispenses the specified quantity of medicine to the Current Patient.<br>
+<p>An apple a day certainly is not enough! Time to get give the patient some medicine! <br>
 Alias: <code>dm</code><br>
 Format <code>dispensemedicine MEDICINE_INDEX amt/AMOUNT</code></p>
 </div>
@@ -1294,7 +1295,7 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="sect3">
 <h4 id="finish"><a class="link" href="#finish">3.3.9. Finishing service of the Current Patient: <code>finish</code></a></h4>
 <div class="paragraph">
-<p>Transfers the Current Patient to the Served Patient Queue.<br>
+<p>Looks like we are done with the patient!<br>
 Format: <code>finish</code></p>
 </div>
 <div class="admonitionblock tip">
@@ -1323,7 +1324,7 @@ Format: <code>finish</code></p>
 <div class="sect3">
 <h4 id="removing-patient-from-served-patient-queue-code-payment-code"><a class="link" href="#removing-patient-from-served-patient-queue-code-payment-code">3.3.10. Removing patient from Served Patient Queue: <code>payment</code></a></h4>
 <div class="paragraph">
-<p>Removes a patient from the Served Patient Queue when the patient completes payment.<br>
+<p>Done with all document processing? Patient can now make his payment and leave. Goodbye!<br>
 Alias: <code>pay</code><br>
 Format: <code>payment INDEX</code></p>
 </div>
@@ -1929,4 +1930,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 18:51:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 03:24:48 UTC</div></div></div></body></html>
