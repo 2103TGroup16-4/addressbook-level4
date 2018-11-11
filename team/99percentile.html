@@ -41,7 +41,7 @@ patient or medicine by entering just one simple line in the command box.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Want to make your clinic more organised? <a href="https://github.com/CS2103-AY1819S1-W16-4/main/releases">Download</a> CLInic and try it now for <strong>FREE</strong>!</p>
+<p>Want to make your clinic more organised? Download <a href="https://github.com/CS2103-AY1819S1-W16-4/main/releases">CLInic</a> and try it now for <strong>FREE</strong>!</p>
 </div>
 </div>
 </div>
@@ -49,20 +49,20 @@ patient or medicine by entering just one simple line in the command box.</p>
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of Contributions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this section, you can find the major and minor enhancement that I created for CLInic,
+<p>In this section, you can find the major and minor enhancement that I made for CLInic,
 as well as my contributions to the project.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: Implementation of <strong>medical records</strong> in CLInic.</p>
+<p><strong>Major enhancement</strong>: Implementation of <strong>medicine records system</strong> in CLInic.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>What it does: It allows the clinic receptionist to automate the tracking of the amount of medicines.</p>
 </li>
 <li>
-<p>Justification: The amount of medicines are tracked and there are useful commands that can organise or find the information of a medicine.
+<p>Justification: The amount of medicines is tracked and there are useful commands that can organise or find the information of a medicine.
 With this, you do not have to manually note down the change in level of medicine every time a medicine is dispensed or restocked.</p>
 </li>
 <li>
@@ -76,7 +76,7 @@ With this, you do not have to manually note down the change in level of medicine
 <div class="ulist">
 <ul>
 <li>
-<p>Rephrased output messages to make it more comprehensive.</p>
+<p>Rephrased output messages to make it more comprehensible.</p>
 </li>
 </ul>
 </div>
@@ -131,7 +131,7 @@ With this, you do not have to manually note down the change in level of medicine
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="medicine-inventory-management"><a class="link" href="#medicine-inventory-management">Medicine Inventory Management</a></h3>
+<h3 id="medicine-records-system"><a class="link" href="#medicine-records-system">Medicine Records System</a></h3>
 <div class="sect3">
 <h4 id="adding-a-medicine-code-addmedicine-code"><a class="link" href="#adding-a-medicine-code-addmedicine-code">Adding a medicine: <code>addmedicine</code></a></h4>
 <div class="paragraph">
@@ -178,7 +178,7 @@ Adds a medicine <em>named</em> <code>asprin</code> with <em>minimum stock quanti
 </ul>
 </div>
 <div class="paragraph">
-<p>See below for a pictorial guide on how to add aspirin to the records:</p>
+<p>See below for a pictorial guide on how to add <em>aspirin</em> to the records:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -190,7 +190,7 @@ Adds a medicine <em>named</em> <code>asprin</code> with <em>minimum stock quanti
 <div class="sect3">
 <h4 id="finding-details-of-a-medicine-code-findmedicine-code"><a class="link" href="#finding-details-of-a-medicine-code-findmedicine-code">Finding details of a medicine: <code>findmedicine</code></a></h4>
 <div class="paragraph">
-<p>Forgot the serial number of a medicine?<br>
+<p>Need the price of a medicine urgently?<br>
 Use <code>findmedicine</code> to search for
 the details of a medicine from its medicine name!<br>
 Alias: <code>fm</code><br>
@@ -204,7 +204,7 @@ Format: <code>findmedicine MEDICINE_NAME</code></p>
 </td>
 <td class="content">
 You can enter more than one name to get the results of all medicines with the names entered.<br>
-See the third example below.
+Refer to the third example below.
 </td>
 </tr>
 </table>
@@ -223,19 +223,19 @@ Finds the details of the medicines with the name <em>panadol</em>.</p>
 Finds the details of the medicines with the name <em>chlorpheniramine</em>.</p>
 </li>
 <li>
-<p><code>fm telfast panadol</code>
+<p><code>fm telfast panadol</code><br>
 Finds the details of all medicines with the name <em>telfast</em> or <em>panadol</em>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See below for a pictorial guide on how to find chlorpheniramine in the records:</p>
+<p>See below for a pictorial guide on how to find <em>panadol</em> and <em>dermasone</em> in CLInic:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/FindMedicine.png" alt="FindMedicine" width="650">
 </div>
-<div class="title">Figure 2. Guide to the <code>checkstock</code> command</div>
+<div class="title">Figure 2. Guide to the <code>findmedicine</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -253,17 +253,18 @@ Format: <code>checkstock</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Medicines that are low in supply are those whose stock level is equal to or lower than their minimum stock quantity.
+Medicines that are low in supply are defined as
+those whose stock levels are equal to or lower than their minimum stock quantities.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>See below for a pictorial guide on how to use checkstock:</p>
+<p>See below for a pictorial guide on how to use <code>checkstock</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/CheckStock.png" alt="width=650">
+<img src="../images/CheckStock.png" alt="CheckStock" width="650">
 </div>
 <div class="title">Figure 3. Guide to the <code>checkstock</code> command</div>
 </div>
@@ -285,34 +286,43 @@ Medicines that are low in supply are those whose stock level is equal to or lowe
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="medicine-records-system"><a class="link" href="#medicine-records-system">Medicine Records System</a></h3>
+<h3 id="medicine-records-system-2"><a class="link" href="#medicine-records-system-2">Medicine Records System</a></h3>
 <div class="paragraph">
 <p>The medicine records system is used to manage the medicine inventory in the clinic.
 It allows the clinic to automate the monitoring and management of their medicine supply easily.
-The potential to evolve this system is endless, from including artificial intelligence
-to manage the clinic supply without human intervention to delivering the first-hand information
-from medical breakthroughs to treat patients more effectively!</p>
+There is great potential for this system to evolve, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using artificial intelligence to manage the clinic supply without human intervention.</p>
+</li>
+<li>
+<p>Delivering first-hand information
+from medical breakthroughs to treat patients more effectively.</p>
+</li>
+</ul>
 </div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The <em>Medicine</em> class and the properties of the medicine are stored in the Model package.
+<p>The <em>Medicine</em> class and the properties of the medicine are located in <a href="#Model component"><strong>Model</strong></a>.
 They are modeled after the properties of a real medicine in a clinic context.
 The list of medicines currently tracked in the clinic is located in the AddressBook class.</p>
 </div>
 <div class="paragraph">
-<p>See the User Guide for the list of commands related to the medicine class.</p>
+<p>See the <a href="UserGuide.html#Medicine Records System">User Guide</a> for the list of commands related to the medicine class.</p>
 </div>
 <div class="paragraph">
 <p>Given below are examples of how the medicine commands are used:</p>
 </div>
 <div class="paragraph">
-<p>Scenario 1. The clinic orders a new medicine that they do not currently have in their store.
- The user uses the <code>addMedicine</code> command to add the new medicine into the records.</p>
+<p>Scenario 1: The clinic orders a new medicine that they do not currently possess.
+ The clinic receptionist uses the <code>addMedicine</code> command to add the new medicine into the records.</p>
 </div>
 <div class="paragraph">
-<p>Scenario 2. There is a wrong entry of one of the serial number of the medicine. The user types
-<code>editmedicine</code> to correct the serial number. The code on how it works is shown below:</p>
+<p>Scenario 2: There is a wrong entry for one of the serial number of the medicine. The user uses the
+<code>editmedicine</code> command to correct the serial number. The code on how it works is shown below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -332,6 +342,12 @@ The list of medicines currently tracked in the clinic is located in the AddressB
             <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_DUPLICATE_MEDICINE);
         }
 
+        <span class="comment">/* The following three methods checks if the new medicine name or
+        new serial number that is entered used by other medicines in CLInic.
+        If so, they throw an error specifying which of the two is duplicated.
+        This is done as the medicine name and serial number are unique to a medicine.
+        */</span>
+
         checkBothNewMedicineNameAndSerialNumberAlreadyExisting(model, editedMedicine);
         checkNewSerialNumberAlreadyExisting(model, editedMedicine);
         checkNewMedicineNameAlreadyExisting(model, editedMedicine);
@@ -348,9 +364,8 @@ The list of medicines currently tracked in the clinic is located in the AddressB
 </div>
 </div>
 <div class="paragraph">
-<p>Scenario 3. When a patient is allocated medicine, the 'dispensemedicine' command is entered.
-During payment a <code>receipt</code> command is executed by the user to fetch the prices
-for the medicine that is allocated, in addition, the stock level of the medicine is updated.</p>
+<p>Scenario 3: The doctor prescribes the patient he is serving a medicine. The <code>dispensemedicine</code> command is entered.
+The stock level of the medicine is then updated.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -359,13 +374,13 @@ for the medicine that is allocated, in addition, the stock level of the medicine
 <div class="title">Figure 4. Sequence Diagram for <code>dispensemedicine</code></div>
 </div>
 <div class="paragraph">
-<p>Scenario 4. The user needs to check for the stock level of every medicine.
-The user executes the <code>checkStock</code> command
-which lists the medicine that are below their Minimum Stock Quantity.</p>
+<p>Scenario 4: The clinic receptionist needs to check for the stock level of every medicine.
+He executes the <code>checkStock</code> command
+which lists <strong>all</strong> medicines that are below their <em>Minimum Stock Quantity</em>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/checkstockfilter.png" alt="checkstockfilter" width="800">
+<img src="../images/checkstockfilter.png" alt="checkstockfilter" width="450">
 </div>
 <div class="title">Figure 5. Filter medicines that are low in supply</div>
 </div>
@@ -373,35 +388,35 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="paragraph">
-<p>The medicines in the clinic were needed to be stored in a Java Collections.
-Below were the possible ones we chose and the analysis of each one.</p>
+<p>The medicines in the clinic need to be stored in a Java Collection.
+Listed below are the ones we considered and the analysis of each choice:</p>
 </div>
 <div class="sect4">
 <h5 id="aspect-execution-of-the-command"><a class="link" href="#aspect-execution-of-the-command">Aspect: Execution of the command</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Stores the medicine in a list.</p>
+<p><strong>Current choice:</strong> Stores the medicines in a list.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Many useful methods to manipulate data.</p>
+<p>Pros: Many easy and useful methods to manipulate medicines in the list, such as <code>add</code>, <code>get</code> and <code>remove</code>.</p>
 </li>
 <li>
-<p>Cons: Need to search through the list to find a medicine.</p>
+<p>Cons: Relatively slow when searching through the list to find a medicine.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Stores the medicine in a hash map.</p>
+<p><strong>Alternative:</strong> Stores the medicines in a hash map.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Quick reference for object given index.</p>
+<p>Pros: Quick reference for object given the medicine name or serial number.</p>
 </li>
 <li>
-<p>Cons: Many commands need to change to list to use the method and change back, more complex.</p>
+<p>Cons: Cumbersome and error-prone when there is a need to change the hash map into a list to manipulate the medicines.</p>
 </li>
 </ul>
 </div>
@@ -412,4 +427,4 @@ Below were the possible ones we chose and the analysis of each one.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 13:46:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 14:32:51 UTC</div></div></div></body></html>

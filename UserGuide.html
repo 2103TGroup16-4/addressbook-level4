@@ -24,7 +24,7 @@
 <li><a href="#adding-medical-records-of-a-patient-code-addmedicalrecord-code">3.1.7. Adding medical records of a patient: <code>addmedicalrecord</code></a></li>
 </ul>
 </li>
-<li><a href="#medicine">3.2. Medicine Inventory Management</a>
+<li><a href="#medicine">3.2. Medicine Records System</a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-medicine-code-addmedicine-code">3.2.1. Adding a medicine: <code>addmedicine</code></a></li>
 <li><a href="#editing-a-medicine-code-editmedicine-code">3.2.2. Editing a medicine: <code>editmedicine</code></a></li>
@@ -685,7 +685,7 @@ Adds <code>B+</code> (under <em>Blood Type</em>) to the <code>MedicalRecord</cod
 </div>
 </div>
 <div class="sect2">
-<h3 id="medicine"><a class="link" href="#medicine">3.2. Medicine Inventory Management</a></h3>
+<h3 id="medicine"><a class="link" href="#medicine">3.2. Medicine Records System</a></h3>
 <div class="sect3">
 <h4 id="adding-a-medicine-code-addmedicine-code"><a class="link" href="#adding-a-medicine-code-addmedicine-code">3.2.1. Adding a medicine: <code>addmedicine</code></a></h4>
 <div class="paragraph">
@@ -732,7 +732,7 @@ Adds a medicine <em>named</em> <code>asprin</code> with <em>minimum stock quanti
 </ul>
 </div>
 <div class="paragraph">
-<p>See below for a pictorial guide on how to add aspirin to the records:</p>
+<p>See below for a pictorial guide on how to add <em>aspirin</em> to the records:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -842,7 +842,7 @@ Format: <code>liststock</code></p>
 <div class="sect3">
 <h4 id="finding-details-of-a-medicine-code-findmedicine-code"><a class="link" href="#finding-details-of-a-medicine-code-findmedicine-code">3.2.5. Finding details of a medicine: <code>findmedicine</code></a></h4>
 <div class="paragraph">
-<p>Forgot the serial number of a medicine?<br>
+<p>Need the price of a medicine urgently?<br>
 Use <code>findmedicine</code> to search for
 the details of a medicine from its medicine name!<br>
 Alias: <code>fm</code><br>
@@ -856,7 +856,7 @@ Format: <code>findmedicine MEDICINE_NAME</code></p>
 </td>
 <td class="content">
 You can enter more than one name to get the results of all medicines with the names entered.<br>
-See the third example below.
+Refer to the third example below.
 </td>
 </tr>
 </table>
@@ -875,19 +875,19 @@ Finds the details of the medicines with the name <em>panadol</em>.</p>
 Finds the details of the medicines with the name <em>chlorpheniramine</em>.</p>
 </li>
 <li>
-<p><code>fm telfast panadol</code>
+<p><code>fm telfast panadol</code><br>
 Finds the details of all medicines with the name <em>telfast</em> or <em>panadol</em>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See below for a pictorial guide on how to find chlorpheniramine in the records:</p>
+<p>See below for a pictorial guide on how to find <em>panadol</em> and <em>dermasone</em> in CLInic:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindMedicine.png" alt="FindMedicine" width="650">
 </div>
-<div class="title">Figure 11. Guide to the <code>checkstock</code> command</div>
+<div class="title">Figure 11. Guide to the <code>findmedicine</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -905,17 +905,18 @@ Format: <code>checkstock</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Medicines that are low in supply are those whose stock level is equal to or lower than their minimum stock quantity.
+Medicines that are low in supply are defined as
+those whose stock levels are equal to or lower than their minimum stock quantities.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>See below for a pictorial guide on how to use checkstock:</p>
+<p>See below for a pictorial guide on how to use <code>checkstock</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CheckStock.png" alt="width=650">
+<img src="images/CheckStock.png" alt="CheckStock" width="650">
 </div>
 <div class="title">Figure 12. Guide to the <code>checkstock</code> command</div>
 </div>
@@ -1912,4 +1913,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 13:46:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 14:32:51 UTC</div></div></div></body></html>
