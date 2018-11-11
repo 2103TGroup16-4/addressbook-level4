@@ -1011,6 +1011,12 @@ for the medicine that is allocated, in addition, the stock level of the medicine
 The user executes the <code>checkStock</code> command
 which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/checkstockfilter.png" alt="checkstockfilter" width="800">
+</div>
+<div class="title">Figure 20. Filter medicines that are low in supply</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
@@ -1064,7 +1070,7 @@ he is done with seeing the doctor, he will become a <code>ServedPatient</code> a
 <div class="content">
 <img src="images/PQMSClassDiagram.png" alt="PQMSClassDiagram" width="850">
 </div>
-<div class="title">Figure 20. Class Diagram of PQMS</div>
+<div class="title">Figure 21. Class Diagram of PQMS</div>
 </div>
 <div class="paragraph">
 <p><code>ServedPatient</code> acts as a wrapper for <code>Patient</code>, storing intermediate information that are likely to change during the patient&#8217;s visit to the clinic.
@@ -1153,7 +1159,7 @@ of the PQMS.</p>
 <div class="content">
 <img src="images/RegisterSequenceDiagram.png" alt="RegisterSequenceDiagram" width="900">
 </div>
-<div class="title">Figure 21. Sequence Diagram for RegisterCommand.</div>
+<div class="title">Figure 22. Sequence Diagram for RegisterCommand.</div>
 </div>
 <div class="paragraph">
 <p>The other PQMS commands roughly follow the same sequence as <code>Register</code> command but can interact with <code>CurrentPatient</code> or <code>ServedPatientList</code> instead of <code>PatientQueue</code>.</p>
@@ -1168,7 +1174,7 @@ of the PQMS.</p>
 <div class="content">
 <img src="images/PQMSPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 22. Registering 3 patients</div>
+<div class="title">Figure 23. Registering 3 patients</div>
 </div>
 <div class="paragraph">
 <p>Step 2. It is a patient&#8217;s turn for consultation. The user executes the <code>serve</code> command to serve the first patient in the queue.
@@ -1178,7 +1184,7 @@ The patient is now the <code>CurrentPatient</code>.</p>
 <div class="content">
 <img src="images/PQMSCurrentPatient.png" alt="650" width="250">
 </div>
-<div class="title">Figure 23. Serve patient</div>
+<div class="title">Figure 24. Serve patient</div>
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes the <code>DocumentAdd</code> command to add information to the <code>CurrentPatient</code>. These information will be used for document
@@ -1192,7 +1198,7 @@ the <code>ServedPatientQueue</code>. Afterwards, the user executes <code>serve</
 <div class="content">
 <img src="images/PQMSServedPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 24. Finish serving patient</div>
+<div class="title">Figure 25. Finish serving patient</div>
 </div>
 <div class="paragraph">
 <p>Step 5. The user executes various <code>Document</code> commands to generate necessary documents for the served patient.</p>
@@ -1264,7 +1270,7 @@ him from the <code>ServedPatientQueue</code>.</p>
 <div class="content">
 <img src="images/DocumentClassDiagram.png" alt="DocumentClassDiagram" width="900">
 </div>
-<div class="title">Figure 25. Class diagram representing how the <code>Document</code> and <em>document related</em> classes are implemented.</div>
+<div class="title">Figure 26. Class diagram representing how the <code>Document</code> and <em>document related</em> classes are implemented.</div>
 </div>
 <div class="paragraph">
 <p>As the formatter which directs how the documents are built from the <code>DocumentTemplate.html</code> template, the <code>Document</code>
@@ -1290,7 +1296,7 @@ him from the <code>ServedPatientQueue</code>.</p>
 <div class="content">
 <img src="images/DocumentActivityDiagram.png" alt="DocumentActivityDiagram" width="900">
 </div>
-<div class="title">Figure 26. Flow of activities when a <em>document related command</em> is executed. Only the methods that are <strong>implemented</strong> within <code>Document</code> itself are labelled in the diagram.</div>
+<div class="title">Figure 27. Flow of activities when a <em>document related command</em> is executed. Only the methods that are <strong>implemented</strong> within <code>Document</code> itself are labelled in the diagram.</div>
 </div>
 <div class="paragraph">
 <p>As seen in the above activity diagram, upon executing a <em>document related command</em>, the corresponding document will
@@ -1505,7 +1511,7 @@ flexibility of structuring the contents unique to its document type by means of 
 <div class="content">
 <img src="images/ReceiptSequenceDiagram.png" alt="ReceiptSequenceDiagram" width="900">
 </div>
-<div class="title">Figure 27. Sequence diagram for ReceiptCommand.</div>
+<div class="title">Figure 28. Sequence diagram for ReceiptCommand.</div>
 </div>
 <div class="paragraph">
 <p>When the <code>ReceiptCommand</code> is executed, it will construct a new <code>Receipt</code> object and extract the relevant information
@@ -1570,7 +1576,7 @@ Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <
 <div class="content">
 <img src="images/MCSequenceDiagram.png" alt="MCSequenceDiagram" width="900">
 </div>
-<div class="title">Figure 28. Sequence diagram for MedicalCertificateCommand.</div>
+<div class="title">Figure 29. Sequence diagram for MedicalCertificateCommand.</div>
 </div>
 <div class="paragraph">
 <p>When the <code>MedicalCertificateCommand</code> is executed, it will construct a new <code>MedicalCertificate</code> object and extract the relevant information
@@ -1641,7 +1647,7 @@ Executing <code>mc</code> with an invalid index will <strong>not</strong> result
 <div class="content">
 <img src="images/RLSequenceDiagram.png" alt="RLSequenceDiagram" width="900">
 </div>
-<div class="title">Figure 29. Sequence diagram for ReferralLetterCommand.</div>
+<div class="title">Figure 30. Sequence diagram for ReferralLetterCommand.</div>
 </div>
 <div class="paragraph">
 <p>When the <code>ReferralLetterCommand</code> is executed, it will construct a new <code>ReferralLetter</code> object and extract the relevant information
@@ -1729,7 +1735,7 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 <div class="content">
 <img src="images/PQMS-gui.png" alt="PQMS gui" width="850">
 </div>
-<div class="title">Figure 30. GUI for the PQMS</div>
+<div class="title">Figure 31. GUI for the PQMS</div>
 </div>
 <div class="paragraph">
 <p>After <code>QueueCommands</code> such as <code>register</code>, <code>serve</code>, etc., the GUI will automatically update itself as the user enters these commands to reflect the situation of the PQMS at that exact point in time.</p>
@@ -1738,7 +1744,7 @@ Executing <code>refer</code> with an invalid index will <strong>not</strong> res
 <div class="content">
 <img src="images/PQMS-GUI-2.png" alt="PQMS GUI 2" width=""650">
 </div>
-<div class="title">Figure 31. GUI for the PQMS after several commands</div>
+<div class="title">Figure 32. GUI for the PQMS after several commands</div>
 </div>
 <div class="paragraph">
 <p>This UI element is implemented using JavaFX&#8217;s <code>WebView</code> and a local HTML file. The sequence of events for how the <code>WebView</code> is updated is as follows:</p>
@@ -1981,7 +1987,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 32. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 33. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3481,4 +3487,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 09:24:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 09:34:57 UTC</div></div></div></body></html>
