@@ -701,7 +701,17 @@ Format: <code>addmedicine mn/MEDICINE_NAME msq/MINIMUM_STOCK_QUANTITY ppu/PRICE_
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The serial number of a medicine <strong>must</strong> have at least 5 digits!
+<div class="ulist">
+<ul>
+<li>
+<p>The serial number of a medicine <strong>must</strong> have at least 5 digits!</p>
+</li>
+<li>
+<p>This command is used for adding medicine that does not exist in CLInic. For restocking a
+medicine, use the <code>restock</code> command.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -724,32 +734,11 @@ Adds a medicine <em>named</em> <code>asprin</code> with <em>minimum stock quanti
 <div class="paragraph">
 <p>See below for a pictorial guide on how to add aspirin to the records:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="1">
-<li>
-<p>Enter the <code>am</code> command with the desired parameters as shown in Figure 10 below.</p>
-</li>
-</ol>
-</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/addmedicine-example-3.png" alt="addmedicine example 3" width="650">
+<img src="images/AddMedicine.png" alt="AddMedicine" width="650">
 </div>
-<div class="title">Figure 10. Type the <code>am</code> command into the command box</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="2">
-<li>
-<p>Scroll all the way down on the medicine panel to see the medicine added to CLInic.
-See Figure 11 below for example.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/addmedicine-example-4.png" alt="addmedicine example 4" width="650">
-</div>
-<div class="title">Figure 11. Scroll down to see the medicine successfully added</div>
+<div class="title">Figure 10. Guide to the <code>addmedicine</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -853,9 +842,9 @@ Format: <code>liststock</code></p>
 <div class="sect3">
 <h4 id="finding-details-of-a-medicine-code-findmedicine-code"><a class="link" href="#finding-details-of-a-medicine-code-findmedicine-code">3.2.5. Finding details of a medicine: <code>findmedicine</code></a></h4>
 <div class="paragraph">
-<p>Finding the best medicine for your patient?<br>
+<p>Forgot the serial number of a medicine?<br>
 Use <code>findmedicine</code> to search for
-the details of a medicine from its medicine name.<br>
+the details of a medicine from its medicine name!<br>
 Alias: <code>fm</code><br>
 Format: <code>findmedicine MEDICINE_NAME</code></p>
 </div>
@@ -866,7 +855,8 @@ Format: <code>findmedicine MEDICINE_NAME</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can enter more than one name to get the results of all medicines with the names entered.
+You can enter more than one name to get the results of all medicines with the names entered.<br>
+See the third example below.
 </td>
 </tr>
 </table>
@@ -878,48 +868,32 @@ You can enter more than one name to get the results of all medicines with the na
 <ul>
 <li>
 <p><code>findmedicine panadol</code><br>
-Finds the details of the medicines tagged with the keyword <code>panadol</code>.</p>
+Finds the details of the medicines with the name <em>panadol</em>.</p>
 </li>
 <li>
 <p><code>fm chlorpheniramine</code><br>
-Finds the details of the medicines tagged with the keyword <code>chlorpheniramine</code>.</p>
+Finds the details of the medicines with the name <em>chlorpheniramine</em>.</p>
+</li>
+<li>
+<p><code>fm telfast panadol</code>
+Finds the details of all medicines with the name <em>telfast</em> or <em>panadol</em>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>See below for a pictorial guide on how to find chlorpheniramine in the records:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic" start="1">
-<li>
-<p>Enter the <code>fm</code> command with the desired parameters as shown in Figure 12 below.</p>
-</li>
-</ol>
-</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/find-medicine-example-1.png" alt="find medicine example 1" width="650">
+<img src="images/FindMedicine.png" alt="FindMedicine" width="650">
 </div>
-<div class="title">Figure 12. Type <code>fm</code> command into the command box</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="2">
-<li>
-<p>See the medicine panel as shown in Figure 13 for all the medicines named "chlorpheniramine".</p>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/find-medicine-example-2.png" alt="find medicine example 2" width="650">
-</div>
-<div class="title">Figure 13. See all medicines named "chlorpheniramine".</div>
+<div class="title">Figure 11. Guide to the <code>checkstock</code> command</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="listing-medicines-that-are-low-in-supply-code-checkstock-code"><a class="link" href="#listing-medicines-that-are-low-in-supply-code-checkstock-code">3.2.6. Listing medicines that are low in supply: <code>checkstock</code></a></h4>
 <div class="paragraph">
-<p>Need to do the time-consuming stock taking?
+<p>No time to do stock taking?<br>
 Use <code>checkstock</code> and get it done in under 2 seconds!<br>
 Alias: <code>cs</code><br>
 Format: <code>checkstock</code></p>
@@ -938,6 +912,12 @@ Medicines that are low in supply are those whose stock level is equal to or lowe
 </div>
 <div class="paragraph">
 <p>See below for a pictorial guide on how to use checkstock:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CheckStock.png" alt="width=650">
+</div>
+<div class="title">Figure 12. Guide to the <code>checkstock</code> command</div>
 </div>
 </div>
 </div>
@@ -993,7 +973,7 @@ Registers the 3rd patient in the database.</p>
 <div class="content">
 <img src="images/registercommand.png" alt="registercommand" width="600">
 </div>
-<div class="title">Figure 14. After executing the <code>register 3</code> command</div>
+<div class="title">Figure 13. After executing the <code>register 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1048,13 +1028,13 @@ Removes the 3rd patient in the queue.</p>
 <div class="content">
 <img src="images/beforeremove.png" alt="beforeremove" width="600">
 </div>
-<div class="title">Figure 15. Before <code>remove 3</code> command</div>
+<div class="title">Figure 14. Before <code>remove 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterremove.png" alt="afterremove" width="600">
 </div>
-<div class="title">Figure 16. After <code>remove 3</code> command</div>
+<div class="title">Figure 15. After <code>remove 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1111,13 +1091,13 @@ Inserts the 4th patient in the database into the 2nd position in the patient que
 <div class="content">
 <img src="images/beforeinsert.png" alt="beforeinsert" width="600">
 </div>
-<div class="title">Figure 17. Before <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 16. Before <code>insert 4 p/2</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterinsert.png" alt="afterinsert" width="600">
 </div>
-<div class="title">Figure 18. After <code>insert 4 p/2</code> command</div>
+<div class="title">Figure 17. After <code>insert 4 p/2</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1152,13 +1132,13 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="content">
 <img src="images/beforeserve.png" alt="beforeserve" width="600">
 </div>
-<div class="title">Figure 19. Before <code>serve</code> command</div>
+<div class="title">Figure 18. Before <code>serve</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterserve.png" alt="afterserve" width="600">
 </div>
-<div class="title">Figure 20. After <code>serve</code> command</div>
+<div class="title">Figure 19. After <code>serve</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1217,13 +1197,13 @@ Adds MC duration and notes to the Current Patient.</p>
 <div class="content">
 <img src="images/beforeadddocument.png" alt="beforeadddocument" width="600">
 </div>
-<div class="title">Figure 21. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 20. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afteradddocument.png" alt="afteradddocument" width="600">
 </div>
-<div class="title">Figure 22. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 21. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1277,13 +1257,13 @@ Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current P
 <div class="content">
 <img src="images/beforedispensemedicine.png" alt="beforedispensemedicine" width="600">
 </div>
-<div class="title">Figure 23. Before <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 22. Before <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterdispensemedicine.png" alt="afterdispensemedicine" width="600">
 </div>
-<div class="title">Figure 24. After <code>dispensemedicine 1 amt/10</code></div>
+<div class="title">Figure 23. After <code>dispensemedicine 1 amt/10</code></div>
 </div>
 <div class="ulist">
 <ul>
@@ -1358,13 +1338,13 @@ Removes the 3rd patient from the Served Patient Queue.</p>
 <div class="content">
 <img src="images/beforepayment.png" alt="beforepayment" width="600">
 </div>
-<div class="title">Figure 25. Before <code>payment 3</code> command</div>
+<div class="title">Figure 24. Before <code>payment 3</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/afterpayment.png" alt="afterpayment" width="600">
 </div>
-<div class="title">Figure 26. After <code>payment 3</code> command</div>
+<div class="title">Figure 25. After <code>payment 3</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1411,7 +1391,7 @@ Generates a medical certificate for the 1st patient in the Served Patient Queue.
 <div class="content">
 <img src="images/mc_fig.png" alt="mc fig" width="600">
 </div>
-<div class="title">Figure 27. Generating a medical certificate for patient <code>Alex Yeoh</code>.</div>
+<div class="title">Figure 26. Generating a medical certificate for patient <code>Alex Yeoh</code>.</div>
 </div>
 </div>
 <div class="sect3">
@@ -1448,7 +1428,7 @@ Generates a receipt for the 5th patient in the Served Patient Queue.</p>
 <div class="content">
 <img src="images/receipt_fig.png" alt="receipt fig" width="600">
 </div>
-<div class="title">Figure 28. Generating a receipt for patient <code>Alex Yeoh</code>.</div>
+<div class="title">Figure 27. Generating a receipt for patient <code>Alex Yeoh</code>.</div>
 </div>
 </div>
 <div class="sect3">
@@ -1487,7 +1467,7 @@ Generates a referral letter for the 7th patient in the Served Patient Queue.</p>
 <div class="content">
 <img src="images/refer_fig.png" alt="refer fig" width="600">
 </div>
-<div class="title">Figure 29. Generating a referral letter for patient <code>Alex Yeoh</code>.</div>
+<div class="title">Figure 28. Generating a referral letter for patient <code>Alex Yeoh</code>.</div>
 </div>
 </div>
 </div>
@@ -1932,4 +1912,4 @@ There is no need to save manually.</p>
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 08:39:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 08:58:16 UTC</div></div></div></body></html>
