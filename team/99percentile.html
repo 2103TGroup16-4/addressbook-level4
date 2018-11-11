@@ -25,7 +25,7 @@ Unlike traditional address books, the doctor or clinic receptionist can easily <
 patient or medicine by entering one simple line in the command box.</p>
 </div>
 <div class="paragraph">
-<p>Example of the main features includes:</p>
+<p>This is what CLInic offers:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -36,7 +36,7 @@ patient or medicine by entering one simple line in the command box.</p>
 <p>Realistic model of a clinic&#8217;s daily operation and commands to manipulate data.</p>
 </li>
 <li>
-<p>Customised receipts, medical certificates and referral letters for different clinics.</p>
+<p>Customised receipts, medical certificates and referral letters for clinics.</p>
 </li>
 </ol>
 </div>
@@ -73,7 +73,7 @@ With this, you do not have to manually keep track of the change in stocks every 
 <div class="ulist">
 <ul>
 <li>
-<p>Rephrased output messages to make it more user friendly.</p>
+<p>Rephrased output messages to make it more comprehensive.</p>
 </li>
 </ul>
 </div>
@@ -105,7 +105,7 @@ With this, you do not have to manually keep track of the change in stocks every 
 <p>Reviewed pull requests : <a href="https://github.com">#27</a>, <a href="https://github.com">#31</a>, <a href="https://github.com">#107</a></p>
 </li>
 <li>
-<p>Created the trailer for our project release.</p>
+<p>Configured <a href="#link">config.json</a> to allow Reposense to detect each member&#8217;s works.</p>
 </li>
 </ul>
 </div>
@@ -306,8 +306,11 @@ Medicines that are low in supply are those whose stock level is equal to or lowe
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The medicine records system is used to manage the medicine inventory in the clinic. The <em>Medicine</em> class and the properties
-of the medicine are stored under the Model package. The list of medicines currently tracked in the clinic is located in the AddressBook class.</p>
+<p>The medicine records system is used to manage the medicine inventory in the clinic.
+The <em>Medicine</em> class and the properties of the medicine are stored under the Model package.
+They are modeled after the properties of a real medicine in a clinic context.
+The list of medicines currently tracked in the clinic is located in the AddressBook class.
+You can refer to <a href="#ModelComponent">modelcomponent</a> to see where are the classes located.</p>
 </div>
 <div class="paragraph">
 <p>Click <a href="#link">here</a> for the list of commands related to the medicine class.</p>
@@ -321,12 +324,85 @@ of the medicine are stored under the Model package. The list of medicines curren
 </div>
 <div class="paragraph">
 <p>Scenario 2. There is a wrong entry of one of the serial number of the medicine. The user types
-<code>editmedicine</code> to correct the serial number.</p>
+<code>editmedicine</code> to correct the serial number. Figure xxx shows the execution of the code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> CommandResult execute(Model model, CommandHistory history) <span class="directive">throws</span> CommandException {
+        requireNonNull(model);
+        <span class="predefined-type">List</span>&lt;Medicine&gt; lastShownList = model.getFilteredMedicineList();
+
+        <span class="keyword">if</span> (index.getZeroBased() &gt;= lastShownList.size()) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_MEDICINE_DISPLAYED_INDEX);
+        }
+
+        Medicine medicineToEdit = lastShownList.get(index.getZeroBased());
+        Medicine editedMedicine = createEditedMedicine(medicineToEdit, medicineDescriptor);
+
+        <span class="keyword">if</span> (!medicineToEdit.isSameMedicine(editedMedicine) &amp;&amp; model.hasMedicine(editedMedicine)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_DUPLICATE_MEDICINE);
+        }
+
+        checkBothNewMedicineNameAndSerialNumberAlreadyExisting(model, editedMedicine);
+        checkNewSerialNumberAlreadyExisting(model, editedMedicine);
+        checkNewMedicineNameAlreadyExisting(model, editedMedicine);
+
+        model.updateMedicine(medicineToEdit, editedMedicine);
+        model.updateFilteredMedicineList(Model.PREDICATE_SHOW_ALL_MEDICINES);
+        model.commitAddressBook();
+
+        EventsCenter.getInstance().post(<span class="keyword">new</span> ShowMedicineListEvent());
+
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_EDIT_MEDICINE_SUCCESS, editedMedicine));
+    }
+
+    <span class="comment">/**
+     * Asserts that medicine name has changed when user tries to change the medicine name, and the medicine name
+     * already exists in the records.
+     */</span>
+    <span class="directive">private</span> <span class="type">void</span> checkNewMedicineNameAlreadyExisting(Model model, Medicine editedMedicine) <span class="directive">throws</span> CommandException {
+        <span class="keyword">if</span> (model.hasMedicineName(editedMedicine)
+                &amp;&amp; medicineDescriptor.isMedicineNameChanged()) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_DUPLICATE_MEDICINE_NAME);
+        }
+    }
+
+    <span class="comment">/**
+     * Asserts that serial number has changed when user tries to change the serial number, and the serial number
+     * already exists in the records.
+     */</span>
+    <span class="directive">private</span> <span class="type">void</span> checkNewSerialNumberAlreadyExisting(Model model, Medicine editedMedicine) <span class="directive">throws</span> CommandException {
+        <span class="keyword">if</span> (model.hasSerialNumber(editedMedicine)
+                &amp;&amp; medicineDescriptor.isSerialNumberChanged()) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_USED_SERIAL_NUMBER);
+        }
+    }
+
+    <span class="comment">/**
+     * Asserts that both the medicine name and serial number have changed when user tries to change the both of them,
+     * and both parameters already exists in the records.
+     */</span>
+    <span class="directive">private</span> <span class="type">void</span> checkBothNewMedicineNameAndSerialNumberAlreadyExisting(Model model, Medicine editedMedicine)
+            <span class="directive">throws</span> CommandException {
+        <span class="keyword">if</span> (model.hasMedicineName(editedMedicine)
+                &amp;&amp; model.hasSerialNumber(editedMedicine)
+                &amp;&amp; medicineDescriptor.isMedicineNameChanged()
+                &amp;&amp; medicineDescriptor.isSerialNumberChanged()) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_USED_SERIAL_NUMBER + <span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span> + MESSAGE_DUPLICATE_MEDICINE_NAME);
+        }
+    }</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Scenario 3. When a patient is allocated medicine, the 'dispensemedicine' command is entered.
 During payment a <code>receipt</code> command is executed by the user to fetch the prices
 for the medicine that is allocated, in addition, the stock level of the medicine is updated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DispenseMedicineSequenceDiagram.png" alt="DispenseMedicineSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 5. Sequence Diagram for <code>dispensemedicine</code></div>
 </div>
 <div class="paragraph">
 <p>Scenario 4. The user needs to check for the stock level of every medicine.
@@ -336,6 +412,10 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p>The medicines in the clinic were needed to be stored in a Java Collections.
+Below were the possible ones we chose and the analysis of each one.</p>
+</div>
 <div class="sect4">
 <h5 id="aspect-execution-of-the-command"><a class="link" href="#aspect-execution-of-the-command">Aspect: Execution of the command</a></h5>
 <div class="ulist">
@@ -372,4 +452,4 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:32:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:39:04 UTC</div></div></div></body></html>
