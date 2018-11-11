@@ -132,7 +132,7 @@
 </table>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UI.png" alt="UI" width="750">
+<img src="../images/Ui.png" alt="Ui" width="750">
 </div>
 <div class="title">Figure 1. Mockup of CLInic UI</div>
 </div>
@@ -147,7 +147,7 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are part of the sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are part of the sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users. My full contribution can be viewed here: <a href="https://cs2103-ay1819s1-w16-4.github.io/main/UserGuide.html#pqms">PQMS Section 3.3</a></em></p></td>
 </tr>
 </tbody>
 </table>
@@ -216,66 +216,6 @@ Registers the 1st patient in the resulting list of the <code>find</code> command
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-patients-in-waiting-queue-code-queue-code"><a class="link" href="#listing-all-patients-in-waiting-queue-code-queue-code">Listing all patients in Waiting Queue: <code>queue</code></a></h4>
-<div class="paragraph">
-<p>Need to know who is in the queue? Use the queue command!<br>
-Alias: <code>q</code><br>
-Format: <code>queue</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="removing-a-patient-from-waiting-queue-code-remove-code"><a class="link" href="#removing-a-patient-from-waiting-queue-code-remove-code">Removing a patient from Waiting Queue: <code>remove</code></a></h4>
-<div class="paragraph">
-<p>Patient can&#8217;t wait for his turn and left the clinic? Time to remove him from the queue!<br>
-Alias: <code>rem</code><br>
-Format: <code>remove INDEX</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The <code>INDEX</code> <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>remove 3</code><br>
-Removes the 3rd patient in the queue.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/beforeremove.png" alt="beforeremove" width="600">
-</div>
-<div class="title">Figure 3. Before <code>remove 3</code> command</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/afterremove.png" alt="afterremove" width="600">
-</div>
-<div class="title">Figure 4. After <code>remove 3</code> command</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>rem 3</code><br>
-Removes the 2nd patient in the queue.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
 <h4 id="serve"><a class="link" href="#serve">Serving the first patient in Waiting queue: <code>serve</code></a></h4>
 <div class="paragraph">
 <p>Doctor is finally ready to the serve the next patient? Use the serve command!
@@ -299,13 +239,13 @@ Upon successful call of this command, the medicine list will be displayed.
 <div class="content">
 <img src="../images/beforeserve.png" alt="beforeserve" width="600">
 </div>
-<div class="title">Figure 5. Before <code>serve</code> command</div>
+<div class="title">Figure 3. Before <code>serve</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/afterserve.png" alt="afterserve" width="600">
 </div>
-<div class="title">Figure 6. After <code>serve</code> command</div>
+<div class="title">Figure 4. After <code>serve</code> command</div>
 </div>
 </div>
 <div class="sect3">
@@ -364,152 +304,19 @@ Adds MC duration and notes to the Current Patient.</p>
 <div class="content">
 <img src="../images/beforeadddocument.png" alt="beforeadddocument" width="600">
 </div>
-<div class="title">Figure 7. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 5. Before <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/afteradddocument.png" alt="afteradddocument" width="600">
 </div>
-<div class="title">Figure 8. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
+<div class="title">Figure 6. After <code>adddocument mc/3 n/Headache for the past 2 days</code> command</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code>ad r/Ng Teng Fong Hospital</code><br>
 Adds referral to the Current Patient.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="dispensing-medicine-to-current-patient-code-dispensemedicine-code"><a class="link" href="#dispensing-medicine-to-current-patient-code-dispensemedicine-code">Dispensing medicine to Current Patient: <code>dispensemedicine</code></a></h4>
-<div class="paragraph">
-<p>An apple a day certainly is not enough! Time to get give the patient some medicine! <br>
-Alias: <code>dm</code><br>
-Format <code>dispensemedicine MEDICINE_INDEX amt/AMOUNT</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-Dispenses medicine at the specified <code>MEDICINE_INDEX</code> to the Current Patient. The index refers to the index number shown in the displayed medicine list. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>dispensemedicine 1 amt/10</code><br>
-10 units of the 1st medicine in the displayed medicine list will be added to the Current Patient.<br></p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/beforedispensemedicine.png" alt="beforedispensemedicine" width="600">
-</div>
-<div class="title">Figure 9. Before <code>dispensemedicine 1 amt/10</code></div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/afterdispensemedicine.png" alt="afterdispensemedicine" width="600">
-</div>
-<div class="title">Figure 10. After <code>dispensemedicine 1 amt/10</code></div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>dm 5 amt/2</code><br>
-2 units of the 5th medicine in the displayed medicine list will be added to the Current Patient.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="finish"><a class="link" href="#finish">Finishing service of the Current Patient: <code>finish</code></a></h4>
-<div class="paragraph">
-<p>Looks like we are done with the patient!<br>
-Format: <code>finish</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-<div class="ulist">
-<ul>
-<li>
-<p>This command cannot be called if no notes have been added to the patient. Use <a href="#adddocument"><code>adddocument</code></a> command with prefix <code>n/</code> to add <code>NOTES</code>.</p>
-</li>
-<li>
-<p>Upon successful call of this command, the patient list will be displayed.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="removing-patient-from-served-patient-queue-code-payment-code"><a class="link" href="#removing-patient-from-served-patient-queue-code-payment-code">Removing patient from Served Patient Queue: <code>payment</code></a></h4>
-<div class="paragraph">
-<p>Done with all document processing? Patient can now make his payment and leave. Goodbye!<br>
-Alias: <code>pay</code><br>
-Format: <code>payment INDEX</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Pro tip(s):</div>
-Removes the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the Served Patient Queue. The index <strong>must be a positive integer</strong> (i.e. 1, 2, 3, &#8230;&#8203;).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>payment 3</code><br>
-Removes the 3rd patient from the Served Patient Queue.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/beforepayment.png" alt="beforepayment" width="600">
-</div>
-<div class="title">Figure 11. Before <code>payment 3</code> command</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/afterpayment.png" alt="afterpayment" width="600">
-</div>
-<div class="title">Figure 12. After <code>payment 3</code> command</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>pay 1</code><br>
-Removes the 1st patient from the Served Patient Queue.</p>
 </li>
 </ul>
 </div>
@@ -541,7 +348,7 @@ he is done with seeing the doctor, he will become a <code>ServedPatient</code> a
 <div class="content">
 <img src="../images/PQMSClassDiagram.png" alt="PQMSClassDiagram" width="850">
 </div>
-<div class="title">Figure 13. Class Diagram of PQMS</div>
+<div class="title">Figure 7. Class Diagram of PQMS</div>
 </div>
 <div class="paragraph">
 <p><code>ServedPatient</code> acts as a wrapper for <code>Patient</code>, storing intermediate information that are likely to change during the patient&#8217;s visit to the clinic.
@@ -630,7 +437,7 @@ of the PQMS.</p>
 <div class="content">
 <img src="../images/RegisterSequenceDiagram.png" alt="RegisterSequenceDiagram" width="900">
 </div>
-<div class="title">Figure 14. Sequence Diagram for RegisterCommand.</div>
+<div class="title">Figure 8. Sequence Diagram for RegisterCommand.</div>
 </div>
 <div class="paragraph">
 <p>The other PQMS commands roughly follow the same sequence as <code>Register</code> command but can interact with <code>CurrentPatient</code> or <code>ServedPatientList</code> instead of <code>PatientQueue</code>.</p>
@@ -645,7 +452,7 @@ of the PQMS.</p>
 <div class="content">
 <img src="../images/PQMSPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 15. Registering 3 patients</div>
+<div class="title">Figure 9. Registering 3 patients</div>
 </div>
 <div class="paragraph">
 <p>Step 2. It is a patient&#8217;s turn for consultation. The user executes the <code>serve</code> command to serve the first patient in the queue.
@@ -655,7 +462,7 @@ The patient is now the <code>CurrentPatient</code>.</p>
 <div class="content">
 <img src="../images/PQMSCurrentPatient.png" alt="650" width="250">
 </div>
-<div class="title">Figure 16. Serve patient</div>
+<div class="title">Figure 10. Serve patient</div>
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes the <code>DocumentAdd</code> command to add information to the <code>CurrentPatient</code>. These information will be used for document
@@ -669,7 +476,7 @@ the <code>ServedPatientQueue</code>. Afterwards, the user executes <code>serve</
 <div class="content">
 <img src="../images/PQMSServedPatientQueue.png" alt="650" width="250">
 </div>
-<div class="title">Figure 17. Finish serving patient</div>
+<div class="title">Figure 11. Finish serving patient</div>
 </div>
 <div class="paragraph">
 <p>Step 5. The user executes various <code>Document</code> commands to generate necessary documents for the served patient.</p>
@@ -725,4 +532,4 @@ him from the <code>ServedPatientQueue</code>.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 05:31:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 06:45:46 UTC</div></div></div></body></html>
