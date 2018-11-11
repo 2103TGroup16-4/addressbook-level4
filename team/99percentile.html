@@ -96,7 +96,7 @@ With this, you do not have to manually keep track of the change in stocks every 
 <p>Wrote the utilities for test cases for other team members to build their tests.</p>
 </li>
 <li>
-<p>Proof-read all code to adhere to standard Java writing style.</p>
+<p>Spell-checked all documents to ensure consistency.</p>
 </li>
 <li>
 <p>Advised my team to apply knowledge learned in lecture where necessary.</p>
@@ -306,19 +306,22 @@ Medicines that are low in supply are those whose stock level is equal to or lowe
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The medicine records system is used to manage the medicine inventory in the clinic. The <code>addMedicine</code> Command
-creates a new medicine entry in the inventory. <code>editMedicine</code> Command updates the stock level of the specified medicine. In addition, whenever the
-<code>receipt</code> Command is called, the records will update the stock automatically by subtracting the number of each medicine issued to the patient.</p>
+<p>The medicine records system is used to manage the medicine inventory in the clinic. The <em>Medicine</em> class and the properties
+of the medicine are stored under the Model package. The list of medicines currently tracked in the clinic is located in the AddressBook class.</p>
+</div>
+<div class="paragraph">
+<p>Click <a href="#link">here</a> for the list of commands related to the medicine class.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example of how the medicine class is used:</p>
 </div>
 <div class="paragraph">
-<p>Scenario 1. A new medicine arrives. The user uses the <code>addMedicine</code> command to add the stock into the records.</p>
+<p>Scenario 1. The clinic orders a new medicine that they do not currently have in their store.
+ The user uses the <code>addMedicine</code> command to add the new medicine into the records.</p>
 </div>
 <div class="paragraph">
-<p>Scenario 2. A new shipment of medicine has arrived. The user uses <code>restock</code> command
-to update the new stock levels of exiting medicine.</p>
+<p>Scenario 2. There is a wrong entry of one of the serial number of the medicine. The user types
+<code>editmedicine</code> to correct the serial number.</p>
 </div>
 <div class="paragraph">
 <p>Scenario 3. When a patient is allocated medicine, the 'dispensemedicine' command is entered.
@@ -326,7 +329,8 @@ During payment a <code>receipt</code> command is executed by the user to fetch t
 for the medicine that is allocated, in addition, the stock level of the medicine is updated.</p>
 </div>
 <div class="paragraph">
-<p>Scenario 4. The user needs to check for the stock level of every medicine. The user executes the <code>checkStock</code> command
+<p>Scenario 4. The user needs to check for the stock level of every medicine.
+The user executes the <code>checkStock</code> command
 which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
 </div>
@@ -341,7 +345,7 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Consistent format with the list with patients.</p>
+<p>Pros: Many useful methods to manipulate data.</p>
 </li>
 <li>
 <p>Cons: Need to search through the list to find a medicine.</p>
@@ -357,7 +361,7 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 <p>Pros: Quick reference for object given index.</p>
 </li>
 <li>
-<p>Cons: Difficult to sort the medicine.</p>
+<p>Cons: Many commands need to change to list to use the method and change back, more complex.</p>
 </li>
 </ul>
 </div>
@@ -368,4 +372,4 @@ which lists the medicine that are below their Minimum Stock Quantity.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 05:10:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 05:31:40 UTC</div></div></div></body></html>
