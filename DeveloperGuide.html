@@ -340,6 +340,18 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <pre>This section contains information about the main architecture and design of various components in CLInic.</pre>
 </div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Note that since CLInic was built on top of the <code>addressbook-level4</code> application, <code>addressbook</code> and its associated acronyms are used interchangeably with <code>CLInic</code> for the rest of the guide.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
@@ -1251,7 +1263,7 @@ him from the <code>ServedPatientQueue</code>.</p>
 <div class="paragraph">
 <p>The <code>Document</code> abstract class represents all the documents that can be issued by the clinic. The <code>Receipt</code>,
  <code>MedicalCertificate</code> and <code>ReferralLetter</code> concrete classes, which respective <strong>commands</strong> will be referred
- to henceforth as <em>document related commands</em>, all inherit from. It can be thought of as a <strong>formatter</strong> that
+ to henceforth as <em>document related commands</em>, all inherit from it. It can be thought of as a <strong>formatter</strong> that
  specifies and organises the common information that all these documents must have with the help of the <code>DocumentTemplate.html</code>
  template file.<br>
  Shown below is a class diagram  illustrating how <code>Document</code>, <code>Receipt</code>, <code>MedicalCertificate</code> and
@@ -1325,7 +1337,8 @@ It is used as a means of separating fields of information in file names.</p>
 <div class="paragraph">
 <p>Step 2. The <code>DocumentTemplate.html</code> file is then converted into a <code>string</code>. It is a template with placeholder
 values prefixed by a <code>$</code> that will be replaced with the actual information pertaining to the <code>ServedPatient&#8217;s</code>
-consultation. Shown below is the code snippet that converts the <code>DocumentTemplate</code> <code>HTML</code> file into a <code>string</code>.</p>
+consultation.<br>
+Shown below is the code snippet that converts the <code>DocumentTemplate</code> <code>HTML</code> file into a <code>string</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1398,7 +1411,7 @@ is used to write the updated <code>string</code> into the <code>HTML</code> file
 <div class="ulist">
 <ul>
 <li>
-<p>Allows <code>inheriting</code> classes to use a standardised method to format common information while granting them the
+<p>Allows inheriting classes to use a standardised method to format common information while granting them the
 flexibility of structuring the contents unique to its document type by means of <code>abstract methods</code>.</p>
 </li>
 </ul>
@@ -1409,10 +1422,10 @@ flexibility of structuring the contents unique to its document type by means of 
 <div class="ulist">
 <ul>
 <li>
-<p>Prevents <code>inheriting</code> classes from becoming an <code>Enum</code> as <code>Java</code> does not support <code>multiple inheritance</code>, since all <code>enums</code> implicitly inherit from <code>Enum</code>.</p>
+<p>Prevents inheriting classes from becoming an <code>Enum</code> as <code>Java</code> does not support <code>multiple inheritance</code>, since all <code>enums</code> implicitly inherit from <code>Enum</code>.</p>
 </li>
 <li>
-<p>More computationally expensive than an <code>interface</code> due to the overhead incurred looking up <code>inherited methods</code> and various <code>class members</code>.</p>
+<p>More computationally expensive than an <code>interface</code> due to the overhead incurred looking up inherited methods and various class members.</p>
 </li>
 </ul>
 </div>
@@ -1429,7 +1442,7 @@ flexibility of structuring the contents unique to its document type by means of 
 <div class="ulist">
 <ul>
 <li>
-<p>Can convert <code>inheriting</code> classes to <code>enums</code>, ensuring that the inputs fed to these classes are valid.</p>
+<p>Can convert inheriting classes to <code>enums</code>, ensuring that the inputs fed to these classes are valid.</p>
 </li>
 </ul>
 </div>
@@ -1453,7 +1466,7 @@ flexibility of structuring the contents unique to its document type by means of 
 <div class="ulist">
 <ul>
 <li>
-<p>Unable to standardise the way <code>inheriting</code> classes implement the <code>generateHeader</code> method.</p>
+<p>Unable to standardise the way inheriting classes implement the <code>generateHeader</code> method.</p>
 </li>
 </ul>
 </div>
@@ -1465,7 +1478,7 @@ flexibility of structuring the contents unique to its document type by means of 
 <div class="ulist">
 <ul>
 <li>
-<p>Potentially allow the <code>inheriting</code> classes to omit certain header fields that are relevant to the printing of a document, such as the <code>date</code> and <code>time</code> of the consultation.</p>
+<p>Potentially allow the inheriting classes to omit certain header fields that are relevant to the printing of a document, such as the <code>date</code> and <code>time</code> of the consultation.</p>
 </li>
 <li>
 <p>Information might be formatted differently.</p>
@@ -1490,7 +1503,7 @@ flexibility of structuring the contents unique to its document type by means of 
 <p>Contains a <code>HashSet&lt;Service&gt;</code> attribute to record the <code>Services</code> administered to the patient.</p>
 </li>
 <li>
-<p>Has an attribute <code>totalPrice</code> which stores the total price of all the <code>Services</code> and <code>Medicines</code> received by the patient.</p>
+<p>Contains a <code>totalPrice</code> attribute which stores the total price of all the <code>Services</code> and <code>Medicines</code> received by the patient during the consultation.</p>
 </li>
 </ul>
 </div>
@@ -1505,8 +1518,8 @@ flexibility of structuring the contents unique to its document type by means of 
 <div class="title">Figure 28. Sequence diagram for ReceiptCommand.</div>
 </div>
 <div class="paragraph">
-<p>When the <code>ReceiptCommand</code> is executed, it will construct a new <code>Receipt</code> object and extract the relevant information
-from the <code>ServedPatient</code> specified by the <code>index</code>.
+<p>When the <code>ReceiptCommand</code> is executed, it constructs a new <code>Receipt</code> object and extracts the relevant information
+from the <code>ServedPatient</code> specified by the <code>index</code>.<br>
 Shown below is how the <code>Map&lt;Medicine, MedicineQuantity&gt;</code> of a <code>ServedPatient</code> is unpacked to sieve out the individual
  table entries for the cost of different medicines.</p>
 </div>
@@ -3478,4 +3491,4 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 03:18:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 03:23:08 UTC</div></div></div></body></html>
