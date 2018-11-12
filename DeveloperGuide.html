@@ -83,16 +83,17 @@
 <li><a href="#instructions-for-manual-testing">Appendix H: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">H.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-patient">H.2. Deleting a patient</a></li>
-<li><a href="#adding-a-medical-record-to-patient">H.3. Adding a medical record to patient</a></li>
-<li><a href="#showing-all-medicines">H.4. Showing all medicines</a></li>
-<li><a href="#adding-a-medicine">H.5. Adding a medicine</a></li>
+<li><a href="#deleting-a-code-patient-code">H.2. Deleting a <code>Patient</code></a></li>
+<li><a href="#adding-a-code-medicalrecord-code-to-patient">H.3. Adding a <code>MedicalRecord</code> to patient</a></li>
+<li><a href="#showing-all-code-medicines-code">H.4. Showing all <code>Medicines</code></a></li>
+<li><a href="#adding-a-code-medicine-code">H.5. Adding a <code>Medicine</code></a></li>
 <li><a href="#patient-queue-management-system-2">H.6. Patient Queue Management System</a></li>
-<li><a href="#editing-a-medicine">H.7. Editing a medicine</a></li>
-<li><a href="#restocking-a-medicine">H.8. Restocking a medicine</a></li>
-<li><a href="#check-the-stocks-of-all-medicines">H.9. Check the stocks of all medicines</a></li>
-<li><a href="#saving-data">H.10. Saving data</a></li>
-<li><a href="#generating-documents">H.11. Generating documents</a></li>
+<li><a href="#editing-a-code-medicine-code">H.7. Editing a <code>Medicine</code></a></li>
+<li><a href="#restocking-a-code-medicine-code">H.8. Restocking a <code>Medicine</code></a></li>
+<li><a href="#check-the-code-stocks-code-of-all-code-medicines-code">H.9. Check the <code>Stocks</code> of all <code>Medicines</code></a></li>
+<li><a href="#generating-code-documents-code">H.10. Generating <code>Documents</code></a></li>
+<li><a href="#saving-data">H.11. Saving data</a></li>
+<li><a href="#generating-documents">H.12. Generating documents</a></li>
 </ul>
 </li>
 </ul>
@@ -3419,26 +3420,26 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-patient"><a class="link" href="#deleting-a-patient">H.2. Deleting a patient</a></h3>
+<h3 id="deleting-a-code-patient-code"><a class="link" href="#deleting-a-code-patient-code">H.2. Deleting a <code>Patient</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a patient while all patients are listed</p>
+<p>Deleting a <code>Patient</code> while all patients are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all patients using the <code>list</code> command. Multiple patients in the list.</p>
+<p>Prerequisites: List all <code>Patients</code> using the <code>list</code> command. Multiple <code>Patients</code> in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First <code>Patient</code> is deleted from the list. Details of the deleted <code>Patient</code> shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No patient is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No <code>Patient</code> is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect <code>delete</code> commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size)<br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -3448,23 +3449,23 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-medical-record-to-patient"><a class="link" href="#adding-a-medical-record-to-patient">H.3. Adding a medical record to patient</a></h3>
+<h3 id="adding-a-code-medicalrecord-code-to-patient"><a class="link" href="#adding-a-code-medicalrecord-code-to-patient">H.3. Adding a <code>MedicalRecord</code> to patient</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Adding a medical record to a patient referenced from filtered list</p>
+<p>Adding a <code>MedicalRecord</code> to a <code>Patient</code> referenced from filtered list</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all patients using the <code>list</code> command. Multiple patients in the list. Patient at index <code>1</code> has not had any medical record added yet.</p>
+<p>Prerequisites: List all <code>Patients</code> using the <code>list</code> command. Multiple <code>Patients</code> in the list. <code>Patient</code> at index <code>1</code> has not had any <code>MedicalRecord</code> added yet.</p>
 </li>
 <li>
 <p>Test case: <code>addmedicalrecord 1 b/A+ da/Panadol d/High Fever</code><br>
-Expected: A medical record is added to the first person in the list with specified details. Details of added medical record shown in status message.</p>
+Expected: A <code>MedicalRecord</code> is added to the first <code>Patient</code> in the list with specified details. Details of added <code>MedicalRecord</code> shown in status message.</p>
 </li>
 <li>
 <p>Test case: <code>addmedicalrecord 0 b/A+</code><br>
-Expected: No medical record added to any patient. Error details shown in status message.</p>
+Expected: No <code>MedicalRecord</code> added to any <code>Patient</code>. Error details shown in status message.</p>
 </li>
 </ol>
 </div>
@@ -3473,19 +3474,19 @@ Expected: No medical record added to any patient. Error details shown in status 
 </div>
 </div>
 <div class="sect2">
-<h3 id="showing-all-medicines"><a class="link" href="#showing-all-medicines">H.4. Showing all medicines</a></h3>
+<h3 id="showing-all-code-medicines-code"><a class="link" href="#showing-all-code-medicines-code">H.4. Showing all <code>Medicines</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Listing all medicines in the records</p>
+<p>Listing all <code>Medicines</code> in the records</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>List all medicine using the <code>liststock</code> command.</p>
+<p>List all <code>Medicines</code> using the <code>liststock</code> command.</p>
 </li>
 <li>
 <p>Test case: <code>liststock</code>, <code>ls</code><br>
-Expected: All medicines are listed on the medicine panel. Timestamp in the status bar is updated.</p>
+Expected: All <code>Medicines</code> are listed on the medicine panel. Timestamp in the status bar is updated.</p>
 </li>
 </ol>
 </div>
@@ -3494,23 +3495,23 @@ Expected: All medicines are listed on the medicine panel. Timestamp in the statu
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-medicine"><a class="link" href="#adding-a-medicine">H.5. Adding a medicine</a></h3>
+<h3 id="adding-a-code-medicine-code"><a class="link" href="#adding-a-code-medicine-code">H.5. Adding a <code>Medicine</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Adding a medicine to the records</p>
+<p>Adding a <code>Medicine</code> to the records</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all medicine using the <code>liststock</code> command. Check that the medicine to be added is not in the list.</p>
+<p>Prerequisites: List all <code>Medicines</code> using the <code>liststock</code> command. Check that the <code>Medicine</code> to be added is not in the list.</p>
 </li>
 <li>
 <p>Test case: <code>addmedicine sn/12839400 mn/panadol s/122 ppu/2 msq/20</code><br>
-Expected: Medicine is added to the records. Name of the added medicine shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: <code>Medicine</code> is added to the records. Name of the added <code>Medicine</code> shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
-<p>Other incorrect addmedicine commands to try: <code>addmedicine</code>, <code>addmedicine/e</code> (where e is a unrecognised parameter)<br>
-Expected: No medicine is added. Error details shown in the status message. Status bar remains the same.</p>
+<p>Other incorrect <code>Medicine</code> adding commands to try: <code>addmedicine</code>, <code>addmedicine/e</code> (where e is an unrecognised parameter)<br>
+Expected: No <code>Medicine</code> is added. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
 </div>
@@ -3523,127 +3524,117 @@ Expected: No medicine is added. Error details shown in the status message. Statu
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Registering a patient</p>
+<p>Registering a <code>Patient</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prequisites: List all patients using <code>list</code> command.</p>
+<p>Prequisites: List all <code>Patients</code> using <code>list</code> command.</p>
 </li>
 <li>
 <p>Test case: <code>register 1</code><br>
-Expected: Patient with index 1 is added to the Patient Queue.</p>
+Expected: <code>Patient</code> with index 1 is added to the <code>PatientQueue</code>.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Inserting a patient</p>
+<p>Inserting a <code>Patient</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all patients using <code>list</code> command. <code>Register</code> at least one other patient (<code>register 1</code>) first. Patient at index 2 is not registered into the queue.</p>
+<p>Prerequisites: List all <code>Patients</code> using <code>list</code> command. <code>Register</code> at least one other <code>Patient</code> (<code>register 1</code>) first. <code>Patient</code> at index 2 is not registered into the queue.</p>
 </li>
 <li>
 <p>Test case: <code>insert 2 p/1</code><br>
-Expected: Patient with index 2 will now be the first in queue.</p>
+Expected: <code>Patient</code> with index 2 will now be the first in queue.</p>
 </li>
 <li>
 <p>Test case: <code>insert 3 p/10</code><br>
-Expected: Even though size of the queue might be less than 10, the patient will be added to the back of the queue.</p>
+Expected: Even though size of the queue might be less than 10, the <code>Patient</code> will be added to the back of the queue.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Removing a patient</p>
+<p>Removing a <code>Patient</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: There is someone in the patient queue.</p>
+<p>Prerequisites: There is a <code>Patient</code> in the <code>PatientQueue</code>.</p>
 </li>
 <li>
 <p>Test case: <code>remove 1</code><br>
-Expected: Patient that is first in the queue will be removed.</p>
+Expected: The <code>Patient</code> of position 1 in the <code>PatientQueue</code> will be removed.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Serving a patient</p>
+<p>Serving a <code>Patient</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: There is someone in the patient queue.</p>
+<p>Prerequisites: There is a <code>Patient</code> in the <code>PatientQueue</code>.</p>
 </li>
 <li>
-<p>Test case: <code>serve</code><br></p>
-</li>
-<li>
-<p>Expected: The patient that is first in the queue will become the Current Patient.</p>
+<p>Test case: <code>serve</code><br>
+Expected: The <code>Patient</code> of position 1 in the <code>PatientQueue</code> will become the <code>CurrentPatient</code>.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Adding document content to Current Patient</p>
+<p>Adding <code>DocumentContent</code> to <code>CurrentPatient</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: There is a Current Patient.</p>
+<p>Prerequisites: There is a <code>CurrentPatient</code>.</p>
 </li>
 <li>
-<p>Test case: <code>adddocument n/Fever for past 3 days</code><br></p>
-</li>
-<li>
-<p>Expected: "Fever for past 3 days" will be added to the Current Patient&#8217;s note content.</p>
+<p>Test case: <code>adddocument n/Fever for past 3 days</code><br>
+Expected: "Fever for past 3 days" will be added to the <code>CurrentPatient&#8217;s</code> <code>noteContent</code>.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Dispensing medicine to Current Patient</p>
+<p>Dispensing <code>Medicine</code> to <code>CurrentPatient</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: There is a Current Patient. Medicine stock is listed, use <code>liststock</code> if it is not.</p>
+<p>Prerequisites: There is a <code>CurrentPatient</code>. Use <code>liststock</code> to list the valid <code>Medicines</code> that can be added.</p>
 </li>
 <li>
-<p>Test case: <code>dispensemedicine 1 amt/5</code><br></p>
-</li>
-<li>
-<p>Expected: 5 units of medicine at first index will be dispensed to patient.</p>
+<p>Test case: <code>dispensemedicine 1 amt/5</code><br>
+Expected: 5 units of <code>Medicine</code> of position 1 in the list of <code>Medicines</code> will be dispensed to the <code>Patient</code>.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Finishing service to Current Patient</p>
+<p>Finishing a <code>CurrentPatient&#8217;s</code> consultation</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: There is a Current Patient with existing note content added.</p>
+<p>Prerequisites: There is a <code>CurrentPatient</code> with valid <code>noteContent</code> added.</p>
 </li>
 <li>
-<p>Test case: <code>finish</code><br></p>
-</li>
-<li>
-<p>Expected: Current Patient is transferred to Served Patient List.</p>
+<p>Test case: <code>finish</code><br>
+Expected: <code>CurrentPatient</code> is transferred to the <code>ServedPatientList</code>.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Completing payment for Served Patient</p>
+<p>Completing payment for <code>ServedPatient</code></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequiisites: There is someone in the Served Patient List.</p>
+<p>Prerequiisites: There is a <code>ServedPatient</code> in the <code>ServedPatientList</code>.</p>
 </li>
 <li>
-<p>Test case: <code>payment 1</code><br></p>
-</li>
-<li>
-<p>Expected: Served Patient of position 1 is removed from the Served Patient List.</p>
+<p>Test case: <code>payment 1</code><br>
+Expected: <code>ServedPatient</code> of position 1 is removed from the <code>ServedPatientList</code>.</p>
 </li>
 </ol>
 </div>
@@ -3652,23 +3643,23 @@ Expected: Patient that is first in the queue will be removed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-medicine"><a class="link" href="#editing-a-medicine">H.7. Editing a medicine</a></h3>
+<h3 id="editing-a-code-medicine-code"><a class="link" href="#editing-a-code-medicine-code">H.7. Editing a <code>Medicine</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Editing a medicine in the records</p>
+<p>Editing a <code>Medicine</code> in the records</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all medicine using the <code>liststock</code> command. Check that the medicine to be edited is in the list.</p>
+<p>Prerequisites: List all the <code>Medicines</code> using the <code>liststock</code> command. Check that the <code>Medicine</code> to be edited is in the list.</p>
 </li>
 <li>
 <p>Test case: <code>editmedicine 1 msq/50</code><br>
-Expected: Medicine at index 1 will have its minimum stock quantity changed to 50. Name of the edited medicine shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: <code>Medicine</code> of position 1 in the list will have its <code>MinimumStockQuantity</code> changed to 50. Name of the edited <code>Medicine</code> shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
-<p>Other incorrect editmedicine commands to try: <code>editmedicine</code>, <code>editmedicine/e</code> (where e is a unrecognised parameter) , <code>em 1 msq/-2</code>+
-Expected: No medicine is edited. Error details shown in the status message. Status bar remains the same.</p>
+<p>Other incorrect <code>Edit</code> commands to try: <code>editmedicine</code>, <code>editmedicine/e</code> (where e is a unrecognised parameter) , <code>em 1 msq/-2</code>+
+Expected: No <code>Medicine</code> is edited. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
 </div>
@@ -3677,23 +3668,23 @@ Expected: No medicine is edited. Error details shown in the status message. Stat
 </div>
 </div>
 <div class="sect2">
-<h3 id="restocking-a-medicine"><a class="link" href="#restocking-a-medicine">H.8. Restocking a medicine</a></h3>
+<h3 id="restocking-a-code-medicine-code"><a class="link" href="#restocking-a-code-medicine-code">H.8. Restocking a <code>Medicine</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Restocking a medicine in the records</p>
+<p>Restocking a <code>Medicine</code> in the records</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all medicine using the <code>liststock</code> command. Check that the medicine to be restocked is in the list.</p>
+<p>Prerequisites: List all the <code>Medicines</code> using the <code>liststock</code> command. Check that the <code>Medicine</code> to be restocked is in the list.</p>
 </li>
 <li>
 <p>Test case: <code>restock 1 amt/50</code><br>
-Expected: Medicine at index 1 will have its stock increased by 50. Name and restocked quantity of the restocked medicine shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: <code>Medicine</code> of position 1 in the list will have its <code>Stock</code> increased by 50. Name and restocked quantity of the <code>Medicine</code> shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
-<p>Other incorrect restock commands to try: <code>restock</code>, <code>restock/e</code> (where e is a unrecognised parameter) , <code>rs 1 amt/-2</code>+
-Expected: No medicine is restocked. Error details shown in the status message. Status bar remains the same.</p>
+<p>Other incorrect <code>Restock</code> commands to try: <code>restock</code>, <code>restock/e</code> (where e is a unrecognised parameter) , <code>rs 1 amt/-2</code>+
+Expected: No <code>Medicine</code> is restocked. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
 </div>
@@ -3702,19 +3693,19 @@ Expected: No medicine is restocked. Error details shown in the status message. S
 </div>
 </div>
 <div class="sect2">
-<h3 id="check-the-stocks-of-all-medicines"><a class="link" href="#check-the-stocks-of-all-medicines">H.9. Check the stocks of all medicines</a></h3>
+<h3 id="check-the-code-stocks-code-of-all-code-medicines-code"><a class="link" href="#check-the-code-stocks-code-of-all-code-medicines-code">H.9. Check the <code>Stocks</code> of all <code>Medicines</code></a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Listing all medicines that are low in supply in the records</p>
+<p>Listing all <code>Medicines</code> that are low in supply in the records</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all medicine using the <code>liststock</code> command.</p>
+<p>Prerequisites: List all <code>Medicine</code> using the <code>liststock</code> command.</p>
 </li>
 <li>
 <p>Test case: <code>checkstock</code>, <code>cs</code><br>
-Expected: All medicines that have stock level equal to or lower than the minimum stock quantity are listed on the medicine panel. Timestamp in the status bar is updated.</p>
+Expected: All <code>Medicines</code> that have <code>Stock</code> level equal to or lower than the <code>MinimumStockQuantity</code> are listed on the <code>Medicine</code> panel. Timestamp in the status bar is updated.</p>
 </li>
 </ol>
 </div>
@@ -3723,7 +3714,46 @@ Expected: All medicines that have stock level equal to or lower than the minimum
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">H.10. Saving data</a></h3>
+<h3 id="generating-code-documents-code"><a class="link" href="#generating-code-documents-code">H.10. Generating <code>Documents</code></a></h3>
+<div class="olist loweralpha">
+<div class="title">Generating a <code>Receipt</code> for the <code>ServedPatient</code></div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There is at least one <code>ServedPatient</code> in the <code>ServedPatientList</code>. Ensure that the index to be provided does not exceed the number of <code>ServedPatients</code> in the <code>ServedPatientList</code>.</p>
+</li>
+<li>
+<p>Test Case: <code>receipt 1</code>
+Expected: A <code>Receipt</code> is generated for the <code>ServedPatient</code> of position 1 in the <code>ServedPatientList</code>. A window will pop up to show the contents of the generated <code>Receipt</code>.</p>
+</li>
+</ol>
+</div>
+<div class="olist loweralpha">
+<div class="title">Generating a <code>MedicalCertificate</code> for the <code>ServedPatient</code></div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There is at least one <code>ServedPatient</code> in the <code>ServedPatientList</code>. Ensure that the index to be provided does not exceed the number of <code>ServedPatients</code> in the <code>ServedPatientList</code> and that <code>mcContent</code> has been added to the <code>ServedPatient</code> via the <code>adddocument</code> command.</p>
+</li>
+<li>
+<p>Test Case: <code>mc 1</code>
+Expected: A <code>MedicalCertificate</code> is generated for the <code>ServedPatient</code> of position 1 in the <code>ServedPatientList</code>. A window will pop up to show the contents of the generated <code>MedicalCertificate</code>.</p>
+</li>
+</ol>
+</div>
+<div class="olist loweralpha">
+<div class="title">Generating a <code>ReferralLetter</code> for the <code>ServedPatient</code></div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There is at least one <code>ServedPatient</code> in the <code>ServedPatientList</code>. Ensure that the index to be provided does not exceed the number of <code>ServedPatients</code> in the <code>ServedPatientList</code> and that <code>referralContent</code> has been added to the <code>ServedPatient</code> via the <code>adddocument</code> command.</p>
+</li>
+<li>
+<p>Test Case: <code>refer 1</code>
+Expected: A <code>ReferralLetter</code> is generated for the <code>ServedPatient</code> of position 1 in the <code>ServedPatientList</code>. A window will pop up to show the contents of the generated <code>ReferralLetter</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">H.11. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3743,7 +3773,7 @@ Expected: All medicines that have stock level equal to or lower than the minimum
 </div>
 </div>
 <div class="sect2">
-<h3 id="generating-documents"><a class="link" href="#generating-documents">H.11. Generating documents</a></h3>
+<h3 id="generating-documents"><a class="link" href="#generating-documents">H.12. Generating documents</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3782,4 +3812,4 @@ Expected: All medicines that have stock level equal to or lower than the minimum
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:31:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:37:06 UTC</div></div></div></body></html>
